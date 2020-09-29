@@ -1,8 +1,9 @@
 header {
+  display: block;
+  flex: 1;
   position: relative;
   background:#003445;
-  position: fixed;
-  height: 150px;
+  height: 180px;
   width: 100%;
   min-height: 10px;
   justify-content: space-between;
@@ -22,14 +23,14 @@ header nav ul li.logo-centro img {
   margin-right: 150px;
 }
 
-@media (max-width: 1142px) {
+@media (max-width: 1162px) {
     header nav ul li.logo-centro img  {
     width: 135px;
     height: 55px;
   }
 }
 
-@media (max-width: 1007px) {
+@media (max-width: 1027px) {
   header nav ul li.logo-centro img  {
     display: none;
   }
@@ -75,11 +76,11 @@ a:hover {
 }
 
 /* Inicio modificação 2 */
-/* .submenu {
+.submenu {
   list-style: none;
   padding: 0;
   margin: 0;
-} */
+}
 
 .menu li:hover .submenu {
   display: block;
@@ -93,7 +94,7 @@ a:hover {
 }
 
 .submenu {
-  /* overflow: hidden; */
+  overflow: hidden;
   /* max-height: 0; */
   transition: all 0.6s linear;
 }
@@ -254,8 +255,7 @@ a:hover {
 
 /*Mais uma tentativa*/
 
-nav#wrapper {
-  position: relative;
+nav.wrapper {
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.2);
@@ -286,12 +286,6 @@ ul li {
   padding: 10px 30px;
   display: block;
 }
-ul li span.icon-left {
-  font-size: 0.9em;
-  margin-right: 8px;
-  opacity: 0.3;
-  color: #000;
-}
 
 li.top {
   cursor: pointer;
@@ -306,27 +300,30 @@ li.top:nth-last-child(1) {
 li.upper {
   position: relative;
 }
+
+@media all and (min-width: 768px) {
+  li.lower {
+    position: static;
+    margin-right: -110px;
+    margin-bottom: -205px;
+    transform: translateX(-98px);
+  }
+}
+
 li.upper.collapsed {
   background: rgba(26, 188, 156, 0.5);
 }
-li.upper.collapsed span.icon-right {
+li.upper.collapsed img.arrow-down {
   -moz-transform: rotate(180deg);
   -o-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-li.upper span.icon-right {
-  position: absolute;
-  right: 33px;
-  font-size: 0.8em;
-  top: 12px;
-  opacity: 0.7;
-  -webkit-transition: transform 0.3s ease;
-  -moz-transition: transform 0.3s ease;
-  -ms-transition: transform 0.3s ease;
-  -o-transition: transform 0.3s ease;
-  transition: transform 0.3s ease;
+
+img.arrow-down {
+  width: 12px;
+  height: 12px;
 }
 
 li.lower {
