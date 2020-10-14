@@ -19,22 +19,33 @@ header nav ul li.logo-centro img {
   position: relative;
   justify-content: center;
   margin-right: 150px;
-
-  display: block;
+  display: static;
 }
 
-@media (max-width: 1162px) {
+@media (max-width: 1175px) {
     header nav ul li.logo-centro img  {
     width: 135px;
     height: 55px;
   }
 }
 
-@media (max-width: 1027px) {
+@media (max-width: 1041px) {
   header nav ul li.logo-centro img  {
     display: none;
   }
 }
+
+@media (max-width: 767px) {
+  .header-top {
+    border-top: 1px #444444 solid;
+  }
+}
+
+#logo-box {
+  width: 130px;
+  height: 120px;
+}
+
 
 /* Basic styling */
 nav {
@@ -46,7 +57,7 @@ ul {
 }
 
 a {
-  color: white;
+  color: var(--color-a-text);
   text-decoration: none;
 }
 
@@ -80,7 +91,11 @@ a:hover {
 }
 
 .button.secondary {
-  border-bottom: 1px #444 solid;
+  border-bottom: 1px #444444 solid;
+}
+
+.active {
+  transition: 400ms;
 }
   
   /* Mobile menu */
@@ -253,8 +268,8 @@ li.top {
   background: rgba(26, 188, 156, 0.5); /*Deixa o Destino com essa cor depois de clicado.*/
 /*} */
 
-li.top:nth-last-child(1) {
-  margin-bottom: 20px;
+li a span.destiny {
+  margin-right: -8px;
 }
 
 li.upper {
@@ -266,11 +281,18 @@ li.upper {
     position: static;
     margin-right: -110px;
     margin-bottom: -205px;
-    transform: translateX(-98px);
+    transform: translateX(-102px);
   }
 }
 
+li.upper {
+  border-radius: 30% 30% 30% 30%;
+  background: rgba(26, 188, 156, 0.5);
+  padding: 7.5px 15px;
+}
+
 li.upper.collapsed {
+  border-radius: 30% 30% 0 0;
   background: rgba(26, 188, 156, 0.5);
 }
 
@@ -297,6 +319,7 @@ li.lower {
   -ms-transition: max-height 0.3s ease;
   -o-transition: max-height 0.3s ease;
   transition: max-height 0.3s ease;
+  border-radius: 0% 0% 40% 40%;
 }
 
 li.lower ul li {
@@ -309,6 +332,291 @@ li.lower ul li:hover {
   background: rgba(26, 188, 156, 0.3);
 }
 
-li.lower ul li:nth-last-child(1) {
-  padding-bottom: 18px;
+
+/* Teste Body - Arrumar tudo que tem embaixo*/
+/* Global */
+
+body.hideScroll {
+  overflow: hidden;
+}
+
+/*a {
+  color: #ff5e84;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+} */
+
+p, .description {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+}
+
+
+/* Padrão */
+
+#container {
+  width: 80%;
+  max-width: 980px;
+
+  margin: 40px auto;
+
+  display: flex;
+
+}
+
+
+footer {
+  text-align: center;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+
+  color: #777;
+}
+
+footer a {
+  opacity: 0.7;
+}
+
+.idea {
+  display: flex;
+
+  background-color: #fff;
+  box-shadow: 0 4px 16px -8px rgba(1, 1, 1, 0.1);
+  border-radius: 8px;
+
+  padding: 32px;
+
+  margin-bottom: 32px;
+}
+
+.idea img {
+  width: 60px;
+  height: 60px;
+
+  margin-right: 32px;
+}
+
+.idea h3 {
+  margin: 0;
+}
+
+.idea p {
+  margin: 8px 0;
+  color: #777;
+}
+
+.idea .description {
+  margin: 16px 0;
+}
+
+
+/* Modal */
+
+#modal {
+  background-color: #ff5e84;
+
+  position: absolute; /* Colocando o position absolute, habilita as propriedades abaixo */
+  /*width: 100vw; /* View port, é toda a área visível do seu dispositivo
+  height: 100vw;*/ /* OU */
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+
+  display: flex; /* Quando habilita o display flex, também habilita algumas propriedades */
+  /*align-items: center;*/
+  justify-content: center;
+
+  transition: all 400ms;
+
+}
+
+#modal.addScroll {
+  overflow: auto;
+}
+
+#modal .content {
+  margin-top: 15%;
+
+  color: white;
+}
+
+#modal .content h1 {
+  text-align: center;
+
+  text-transform: uppercase;
+}
+
+#modal form {
+  width: 80%;
+  max-width: 800px;
+
+  margin: 0 auto 15%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+}
+
+.content form div:nth-child(3),
+.content form div:nth-child(4),
+.content form div:nth-child(5) {
+  grid-column: span 2;
+}
+
+form input,
+form textarea {
+  width: 100%;
+
+  padding: 12px;
+
+  box-sizing: border-box;
+
+  border-radius: 6px;
+  border: 1px solid rgba(141, 25, 52, 0.5);
+
+  outline: none;
+  font-size: 16px;
+}
+
+for label {
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0.8px;
+}
+
+form a {
+  width: 150px;
+  height: 40px;
+
+  background-color: #ffffff22;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  border-radius: 6px;
+
+  align-self: end;
+
+  transition: 400ms;
+}
+
+form a:hover {
+  background: #fff;
+  color: #ff5e84;
+
+  text-decoration: none;
+}
+
+form button{
+  background: white;
+
+  width: 150px;
+  height: 40px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  margin-top: 32px;
+  
+  grid-column: 2;
+
+  justify-self: end;
+
+  transition: 400ms;
+
+}
+
+form button:hover {
+  background-color: #0984e3;
+  color: white;
+
+  text-decoration: none;
+}
+
+#modal.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* IDEIA.HTML*/
+#page-ideas #container {
+  display: block;
+}
+#page-ideas header {
+  display: flex;
+  justify-content: space-between;
+}
+
+#page-ideas nav {
+  display: flex;
+  align-items: center;
+}
+
+#page-ideas nav li {
+  list-style-type: none;
+
+  margin-right: 16px;
+}
+
+#page-ideas nav li a {
+  color: #252828;
+}
+
+#page-ideas nav li a.button {
+  color: white;
+}
+
+#page-ideas nav li:last-child {
+  margin: 0;
+
+}
+
+section#title {
+  text-align: center;
+
+}
+
+section#title p {
+  opacity: 0.7;
+  margin: 0;
+}
+
+section#title h1 {
+  margin: 0;
+
+  font-size: 28px;
+}
+
+section#ideas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+}
+
+section#ideas .idea {
+  margin: 0;
+}
+
+section#title,
+section#ideas,
+footer {
+  margin-top: 64px;
 }
