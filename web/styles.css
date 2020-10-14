@@ -198,13 +198,38 @@ a:hover {
     transition: all 0.25s;
   }
 
+  section.sign-up button {
+    padding: 7.5px 15px;
+    background: teal;
+    border: 1px #006d6d solid;
+    border-radius: 50em;
+  }
+
+  section.sign-up button {
+    background: transparent;
+  }
+
+  .sign-up button:hover {
+    text-decoration: none;
+    transition: all 0.25s;
+  }
+
+  .sign-up:not(.secondary) button:hover {
+    background: #006d6d;
+    border-color: #005959;
+  }
+
+  .sign-up button:hover {
+    color: var(--color-button-text);
+  }
+
   .button:not(.secondary) a:hover {
     background: #006d6d;
     border-color: #005959;
   }
 
   .button.secondary a:hover {
-    color: var(color-button-text);
+    color: var(--color-button-text);
   }
 }
   
@@ -340,6 +365,7 @@ body.hideScroll {
   overflow: hidden;
 }
 
+/* Comentar - Início */
 /*a {
   color: #ff5e84;
   font-weight: bold;
@@ -348,7 +374,9 @@ body.hideScroll {
 
 a:hover {
   text-decoration: underline;
-} */
+}*/
+
+/* Fim comentário */
 
 p, .description {
   font-size: 16px;
@@ -388,7 +416,7 @@ footer a {
 .idea {
   display: flex;
 
-  background-color: #fff;
+  background-color: var(--color-primary-lighter);
   box-shadow: 0 4px 16px -8px rgba(1, 1, 1, 0.1);
   border-radius: 8px;
 
