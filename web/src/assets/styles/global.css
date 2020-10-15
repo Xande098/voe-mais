@@ -4,6 +4,7 @@
     --color-background: #F0F0F7;
     --color-header-background: #011C25;
     --color-a-text: #FFFFFF;
+    --color-button-text: #FFFFFF;
     --color-primary-lighter: #9871F5;
     --color-primary-light: #916BEA;
     --color-primary: #8257E5;
@@ -18,7 +19,6 @@
     --color-text-base: #6A6180;
     --color-line-in-white: #E6E6F0;
     --color-input-background: #F8F8FC;
-    --color-button-text: #FFFFFF;
     --color-box-base: #FFFFFF;
     --color-box-footer: #FAFAFC;
 }
@@ -34,7 +34,7 @@ html, body, #root {
 }
 
 body {
-    background: var(--color-background);
+    background: var(--color-text-complement);
 }
 
 #root {

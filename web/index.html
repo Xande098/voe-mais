@@ -2,179 +2,193 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Voe + Passagens Aéreas - Home</title>
+  <title>Voe + Passagens Aéreas - Home</title>
 
-    <link rel="stylesheet" href="./src/assets/styles/global.css">
-    <link rel="stylesheet" href="./styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/assets/styles/global.css">
+  <link rel="stylesheet" href="./styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <link rel="shortcut icon" href="./src/assets/images/logo.png" type="image/png" sizes="60x60">
+  <link rel="shortcut icon" href="./src/assets/images/logo.png" type="image/png" sizes="60x60">
 </head>
 
 <body>
-    <header>
-        <nav id="wrapper">
-            <ul class="menu">
-                <li class="logo">
-                    <div id="logo-box">
-                        <a href="./index.html">
-                            <img src="./src/assets/images/logo.png" alt="Voe+">
-                        </a>
-                    </div>
-                </li>
-                <li class="logo-centro">
-                    <img src="./src/assets/images/background-header-frame.svg" alt="Background-Voe+">
-                </li>
-                <li class="item header-top"><a href="./index.html">Home</a></li>
-
-                <li class="item upper top">
-                    <a href="#">
-                        <span class="destiny">
-                            Destinos
-                            <img src="./src/assets/images/icons/arrow-down.svg" class="arrow-down" alt="arrow-down">
-                        </span>
-                    </a>
-                <li class="item lower">
-                    <ul class="submenu">
-                        <li class="item down"><a href="#">Ásia</a></li>
-                        <li class="item down"><a href="#">Américas</a></li>
-                        <li class="item down"><a href="#">Brasil</a></li>
-                        <li class="item down"><a href="#">Europa</a></li>
-                    </ul>
-                </li>
-                </li>
-
-                <li class="item"><a href="#">Institucional</a></li>
-                <li class="item"><a href="#">Contato</a></li>
-                </li>
-                <li class="item button"><a href="#">Log In</a></li>
-                <li class="item button secondary">
-                    <section id="buttons" class="sign-up">
-                        <button onclick="onOff()">Sign Up</button>
-                    </section>
-                    <!-- <a href="#">Sign Up</a> -->
-                </li>
-                <li class="toggle"><span class="bars"></span></li>
+  <header>
+    <nav id="wrapper">
+      <ul class="menu">
+        <li class="logo">
+          <div id="logo-box">
+            <a href="./index.html">
+              <img src="./src/assets/images/logo.png" alt="Voe+">
+            </a>
+          </div>
+        </li>
+        <li class="logo-centro">
+          <img src="./src/assets/images/background-header-frame.svg" alt="Background-Voe+">
+        </li>
+        <!-- <li class="item header-top"><a href="./index.html">Home</a></li> -->
+      
+        <li class="item upper top">
+          <a href="#">
+            <span class="destiny">
+              Destinos
+              <img src="./src/assets/images/icons/arrow-down.svg" class="arrow-down" alt="arrow-down">
+            </span>
+          </a>
+          <li class="item lower">
+            <ul class="submenu">
+              <li class="item down"><a href="#">Ásia</a></li>
+              <li class="item down"><a href="#">Américas</a></li>
+              <li class="item down"><a href="#">Brasil</a></li>
+              <li class="item down"><a href="#">Europa</a></li>
             </ul>
-        </nav>
+          </li>
+        </li>
 
-    </header>
+        <li class="item"><a href="#">Institucional</a></li>
+        <li class="item"><a href="#">Contato</a></li>
+        </li>
+        <li class="item button">
+          <section id="buttons" class="create-log">
+            <label class="sign-in" onclick="onOff()">Log In</label>
+          </section>
+          <!-- <a href="#">Log In</a> -->
+        </li>
+        <li class="item button secondary">
+          <section id="buttons" class="create-log">
+            <label class="sign-up" onclick="onOff()">Sign Up</label>
+          </section>
+          <!-- <a href="#">Sign Up</a> -->
+        </li>
+        <li class="toggle"><span class="bars"></span></li>
+      </ul>
+    </nav>
 
-    <div class="container">
-        <section id="last-ideias">
-            <div class="idea">
-                <img src="https://image.flaticon.com/icons/svg/2729/2729007.svg" alt="Imagem de Curso de Programação">
+  </header>
 
-                <div class="contente">
-                    <h3>Cursos de Programação</h3>
-                    <p>Estudo</p>
-                    <div class="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, voluptatem optio. Maiores,
-                        mollitia corrupti vero optio quibusdam id non enim. Reiciendis labore aliquam saepe odit.
-                        Ratione tempora vel aliquam molestiae?
-                    </div>
-                    <a href="#">Ir para a Ideia</a>
-                </div>
-            </div>
+  <div class="container">
+    <h2>Promoções</h2>
+    <section id="last-ideias">
+      <div class="idea">
+        <img src="https://image.flaticon.com/icons/svg/2729/2729007.svg" alt="Imagem de Curso de Programação">
 
-            <div class="idea">
-                <img src="https://image.flaticon.com/icons/svg/2729/2729005.svg" alt="Imagem de Exercícios">
-
-                <div class="contente">
-                    <h3>Exercícios</h3>
-                    <p>Saúde</p>
-                    <div class="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, voluptatem optio. Maiores,
-                        mollitia corrupti vero optio quibusdam id non enim. Reiciendis labore aliquam saepe odit.
-                        Ratione tempora vel aliquam molestiae?
-                    </div>
-                    <a href="#">Ir para a Ideia</a>
-                </div>
-            </div>
-
-            <div class="idea">
-                <img src="https://image.flaticon.com/icons/svg/2729/2729027.svg" alt="Imagem de Meditação">
-
-                <div class="contente">
-                    <h3>Meditação</h3>
-                    <p>Mentalidade</p>
-                    <div class="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, voluptatem optio. Maiores,
-                        mollitia corrupti vero optio quibusdam id non enim. Reiciendis labore aliquam saepe odit.
-                        Ratione tempora vel aliquam molestiae?
-                    </div>
-                    <a href="#">Ir para a Ideia</a>
-                </div>
-            </div>
-
-        </section>
-
-        <!--Início Modal-->
-        <!-- Modal -->
-        <div id="modal" class="hide">
-            <div class="content">
-                <h1>Nova Ideia</h1>
-
-                <form action="/" method="POST" onsubmit="return checkFields(event)">
-
-                    <div class="input-wrapper">
-                        <label for="title">Título da Ideia</label>
-                        <input type="text" name="title">
-                    </div>
-
-                    <div class="input-wrapper">
-                        <label for="category">Categoria</label>
-                        <input type="text" name="category">
-                    </div>
-
-                    <div class="input-wrapper">
-                        <label for="image">Link da Imagem</label>
-                        <input type="url" name="image">
-                    </div>
-
-                    <div class="input-wrapper">
-                        <label for="description">Digite uma descrição para essa ideia</label>
-                        <textarea name="description" cols="30" rows="10"></textarea>
-                    </div>
-
-                    <div class="input-wrapper">
-                        <label for="link">Link da ideia</label>
-                        <input type="url" name="link">
-                    </div>
-
-                    <a href="#" onclick="onOff()">Voltar</a>
-                    <button>Salvar</button>
-
-
-                </form>
-
-            </div>
+        <div class="contente">
+          <h3>Cursos de Programação</h3>
+          <p>Estudo</p>
+          <div class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, voluptatem optio. Maiores,
+            mollitia corrupti vero optio quibusdam id non enim. Reiciendis labore aliquam saepe odit.
+            Ratione tempora vel aliquam molestiae?
+          </div>
+          <a href="#">Ir para a Ideia</a>
         </div>
-        <!-- Fim Modal -->
+      </div>
 
-        <!-- Início button Modal -->
-        <section id="buttons">
-            <button onclick="onOff()">+ Adicionar Ideia</button>
-            <a href="/ideias" class="button">Ver Ideias</a>
-        </section>
-        <!-- Fim button Modal -->
+      <div class="idea">
+        <img src="https://image.flaticon.com/icons/svg/2729/2729005.svg" alt="Imagem de Exercícios">
 
-        <!-- Início Footer -->
-        <footer>
-            Com ❤ <a href="https://www.linkedin.com/in/alexandre-sobota-95839ba2" target="_blank">Alexandre</a>
-        </footer>
-        <!-- Fim Footer -->
+        <div class="contente">
+          <h3>Exercícios</h3>
+          <p>Saúde</p>
+          <div class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, voluptatem optio. Maiores,
+            mollitia corrupti vero optio quibusdam id non enim. Reiciendis labore aliquam saepe odit.
+            Ratione tempora vel aliquam molestiae?
+          </div>
+          <a href="#">Ir para a Ideia</a>
+        </div>
+      </div>
 
-        <section class="top-ads"></section>
-        <section class="first"></section>
-        <section class="second"></section>
+      <div class="idea">
+        <img src="https://image.flaticon.com/icons/svg/2729/2729027.svg" alt="Imagem de Meditação">
+
+        <div class="contente">
+          <h3>Meditação</h3>
+          <p>Mentalidade</p>
+          <div class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, voluptatem optio. Maiores,
+            mollitia corrupti vero optio quibusdam id non enim. Reiciendis labore aliquam saepe odit.
+            Ratione tempora vel aliquam molestiae?
+          </div>
+          <a href="#">Ir para a Ideia</a>
+        </div>
+      </div>
+
+    </section>
+
+    <!--Início Modal-->
+    <!-- Modal -->
+    <div id="modal" class="hide">
+      <div class="content">
+        <h1>Tela de Cadastro</h1>
+
+        <form action="/" method="POST" onsubmit="return checkFields(event)">
+
+          <div class="input-wrapper">
+            <label for="title">Nome</label>
+            <input type="text" name="title">
+          </div>
+
+          <div class="input-wrapper">
+            <label for="title">Sobrenome</label>
+            <input type="text" name="title">
+          </div>
+
+          <div class="input-wrapper">
+            <label for="title">CPF</label>
+            <input type="text" name="title">
+          </div>
+
+          <div class="CPF">
+            <label for="title">Data de Nascimento</label>
+            <input type="text" name="title">
+          </div>
+
+          <div class="input-wrapper">
+            <label for="category">Categoria</label>
+            <input type="text" name="category">
+          </div>
+
+          <div class="input-wrapper">
+            <label for="image">Link da Imagem</label>
+            <input type="url" name="image">
+          </div>
+
+          <div class="input-wrapper">
+            <label for="description">Digite uma descrição para essa ideia</label>
+            <textarea name="description" cols="30" rows="10"></textarea>
+          </div>
+
+          <div class="input-wrapper">
+            <label for="link">Link da ideia</label>
+            <input type="url" name="link">
+          </div>
+
+          <a href="#" onclick="onOff()">Voltar</a>
+          <button>Salvar</button>
+
+
+        </form>
+
+      </div>
     </div>
+    <!-- Fim Modal -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="./index.js"></script>
+    <!-- Início Footer -->
+    <footer>
+      Com ❤ <a href="https://www.linkedin.com/in/alexandre-sobota-95839ba2" target="_blank">Alexandre</a>
+    </footer>
+    <!-- Fim Footer -->
+
+    <section class="top-ads"></section>
+    <section class="first"></section>
+    <section class="second"></section>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="./index.js"></script>
 
 </body>
 
