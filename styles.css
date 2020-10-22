@@ -7,7 +7,7 @@ header {
   background: var(--color-header-background);
 }
 
-header nav ul li a img {
+header nav ul li div a img {
   width: 130px;
   height: 120px;
   position: static;
@@ -67,6 +67,13 @@ a:hover {
 .logo a:hover {
   text-decoration: none;
 }
+
+/* Alterado Início */
+.menu {
+  position: relative;
+  margin: 10px 15px;
+}
+/* Alterado Fim */
 
 .menu a {
   display: block;
@@ -129,6 +136,32 @@ a:hover {
 .item.active {
   display: block;
 }
+
+/* Movimentação Destinos */
+.item.lower {
+  position: absolute;
+  display: block;
+  width: 180px;
+}
+/* Fim Movimentação Destinos */
+
+/* Início Mobile Destino */
+@media (max-width: 767px) {
+  .item.lower {
+    position: relative;
+    width: 100%;
+  }
+  #conf {
+    width: 100%; /*Importante*/
+    text-align: center;
+    order: 3;
+  }
+  
+  #conf.active {
+    display: block;
+  }
+}
+/* Fim Mobile Destino */
   
   /* Navbar Toggle */
 .toggle {
@@ -277,20 +310,8 @@ span.destiny {
   margin-right: -8px;
 }
 
-@media all and (min-width: 768px) {
-  li.lower {
-    position: static;
-    margin-right: -110px;
-    margin-bottom: -190px;
-    transform: translateX(-102px);
-  }
-}
-
 li.upper {
-  border-radius: 30% 30% 30% 30%;
-  background: rgba(26, 188, 156, 0.1); /* botão destino 0.5 */
   padding: 7.5px 15px;
-  margin-top: 5px;
 }
 
 li.upper.collapsed {
@@ -427,7 +448,6 @@ footer a {
 
 
 /* Modal */
-
 #modal {
   background: var(--color-header-background);
 
@@ -452,7 +472,6 @@ footer a {
 
 }
 
-
 #modal.addScroll {
   overflow: auto;
 }
@@ -465,7 +484,6 @@ footer a {
 
 #modal .content h1 {
   text-align: center;
- /*  margin-top: 140px; */
   margin-bottom: 40px;
 
   text-transform: uppercase;
@@ -486,27 +504,36 @@ footer a {
 
 @media all and (max-width: 768px) {
   .content {
-    -ms-transform: scale(0.8,0.8); /* IE 9 */
-    transform: scale(0.8,0.8); /* Standard syntax */
+    -ms-transform: scale(0.8, 0.8); /* IE 9 */
+    transform: scale(0.8, 0.8); /* Standard syntax */
   }
 }
 
 .content form div:nth-child(1),
 .content form div:nth-child(2),
 .content form div:nth-child(3),
-.content form div:nth-child(4) {
-  grid-column: span 2;
-}
-
+.content form div:nth-child(4),
 .content form div:nth-child(5),
 .content form div:nth-child(6),
 .content form div:nth-child(7),
-.content form div:nth-child(8) {
-  grid-column: span 4;
+.content form div:nth-child(8),
+.content form div:nth-child(9),
+.content form div:nth-child(10),
+.content form div:nth-child(11),
+.content form div:nth-child(12),
+.content form div:nth-child(13),
+.content form div:nth-child(14),
+.content form div:nth-child(15),
+.content form div:nth-child(16) {
+  grid-column: span 2;
 }
 
-form input,
-form textarea {
+/* .content form div:nth-child(15),
+.content form div:nth-child(16) {
+  grid-column: span 4;
+} */
+
+form input {
   width: 100%;
 
   padding: 12px;
