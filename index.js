@@ -26,10 +26,10 @@ $(".upper").click(function () {
 	}
 });
 
-// Modal
-function onOff() {
+// Modal - Sign Up
+function onOffSignUp() {
     document
-        .querySelector("#modal")
+        .querySelector("#modal-signup")
         .classList
         .toggle("hide")
 
@@ -39,7 +39,52 @@ function onOff() {
         .toggle("hideScroll")
 
     document
-        .querySelector("#modal")
+        .querySelector("#modal-signup")
+        .classList
+        .toggle("addScroll")
+}
+
+function checkFields(event) {
+    
+    const valuesToCheck = [
+        "title",
+        "category",
+        "image",
+        "description",
+        "link",
+    ]
+
+    const isEmpty = valuesToCheck.find(function(value) {
+
+        const checkIfIsString = typeof event.target[value].value === "string";
+        const checkIfIsEmpty = !event.target[value].value.trim()
+        
+        if(checkIfIsString && checkIfIsEmpty) {
+            return true
+        }
+    })
+
+    if(isEmpty) {
+        event.preventDefault()
+        alert("Por favor, preencha todos os campos!");
+    }
+
+}
+
+// Modal - Sign In
+function onOffSignIn() {
+    document
+        .querySelector("#modal-signin")
+        .classList
+        .toggle("hide")
+
+    document
+        .querySelector("body")
+        .classList
+        .toggle("hideScroll")
+
+    document
+        .querySelector("#modal-signin")
         .classList
         .toggle("addScroll")
 }

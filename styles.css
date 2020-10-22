@@ -386,7 +386,7 @@ div.container h2 {
 }
 
 @media (min-width: 1048px) {
-  #last-ideias {
+  #last-travel-packages {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
@@ -414,7 +414,7 @@ footer a {
   opacity: 0.7;
 }
 
-.idea {
+.package {
   display: flex;
 
   background-color: var(--color-primary-lighter);
@@ -426,29 +426,29 @@ footer a {
   margin-bottom: 32px;
 }
 
-.idea img {
+.package img {
   width: 60px;
   height: 60px;
 
   margin-right: 32px;
 }
 
-.idea h3 {
+.package h3 {
   margin: 0;
 }
 
-.idea p {
+.package p {
   margin: 8px 0;
   color: #777;
 }
 
-.idea .description {
+.package .description {
   margin: 16px 0;
 }
 
 
-/* Modal */
-#modal {
+/* Modal Sign Up */
+#modal-signup {
   background: var(--color-header-background);
 
   position: absolute;
@@ -472,24 +472,24 @@ footer a {
 
 }
 
-#modal.addScroll {
+#modal-signup.addScroll {
   overflow: auto;
 }
 
-#modal .content {
+#modal-signup .content-signup {
   margin-top: 15%;
 
   color: white;
 }
 
-#modal .content h1 {
+#modal-signup .content-signup h1 {
   text-align: center;
   margin-bottom: 40px;
 
   text-transform: uppercase;
 }
 
-#modal form {
+#modal-signup form {
   width: 100%;
   max-width: 700px;
   max-height: 80vh;
@@ -503,33 +503,33 @@ footer a {
 }
 
 @media all and (max-width: 768px) {
-  .content {
+  .content-signup {
     -ms-transform: scale(0.8, 0.8); /* IE 9 */
     transform: scale(0.8, 0.8); /* Standard syntax */
   }
 }
 
-.content form div:nth-child(1),
-.content form div:nth-child(2),
-.content form div:nth-child(3),
-.content form div:nth-child(4),
-.content form div:nth-child(5),
-.content form div:nth-child(6),
-.content form div:nth-child(7),
-.content form div:nth-child(8),
-.content form div:nth-child(9),
-.content form div:nth-child(10),
-.content form div:nth-child(11),
-.content form div:nth-child(12),
-.content form div:nth-child(13),
-.content form div:nth-child(14),
-.content form div:nth-child(15),
-.content form div:nth-child(16) {
+.content-signup form div:nth-child(1),
+.content-signup form div:nth-child(2),
+.content-signup form div:nth-child(3),
+.content-signup form div:nth-child(4),
+.content-signup form div:nth-child(5),
+.content-signup form div:nth-child(6),
+.content-signup form div:nth-child(7),
+.content-signup form div:nth-child(8),
+.content-signup form div:nth-child(9),
+.content-signup form div:nth-child(10),
+.content-signup form div:nth-child(11),
+.content-signup form div:nth-child(12),
+.content-signup form div:nth-child(13),
+.content-signup form div:nth-child(14),
+.content-signup form div:nth-child(15),
+.content-signup form div:nth-child(16) {
   grid-column: span 2;
 }
 
-/* .content form div:nth-child(15),
-.content form div:nth-child(16) {
+/* .content-signup form div:nth-child(15),
+.content-signup form div:nth-child(16) {
   grid-column: span 4;
 } */
 
@@ -576,13 +576,15 @@ form a {
 
 form a:hover {
   background: #fff;
-  color: #ff5e84;
+  color: #1C1C1C;
 
   text-decoration: none;
 }
 
 form button{
   background: #8257E5;
+  color: #1C1C1C;
+  font-weight: 700;
 
   width: 150px;
   height: 40px;
@@ -608,7 +610,80 @@ form button:hover {
   text-decoration: none;
 }
 
-#modal.hide {
+#modal-signup.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+/* Modal Sign In */
+#modal-signin {
+  background: var(--color-header-background);
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 10;
+
+  transition: all 400ms;
+
+}
+
+#modal-signin.addScroll {
+  overflow: auto;
+}
+
+#modal-signin .content-signin {
+  margin-top: 15%;
+
+  color: white;
+}
+
+#modal-signin .content-signin h1 {
+  text-align: center;
+  margin-bottom: 40px;
+
+  text-transform: uppercase;
+}
+
+#modal-signin form {
+  width: 100%;
+  max-width: 700px;
+  max-height: 80vh;
+
+  margin: 0 auto 35%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  gap: 20px;
+}
+
+@media all and (max-width: 768px) {
+  .content-signin {
+    -ms-transform: scale(0.8, 0.8); /* IE 9 */
+    transform: scale(0.8, 0.8); /* Standard syntax */
+  }
+}
+
+.content-signin form div:nth-child(1),
+.content-signin form div:nth-child(2) {
+  grid-column: span 4;
+}
+
+#modal-signin.hide {
   opacity: 0;
   visibility: hidden;
 }
