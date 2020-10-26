@@ -1,3 +1,5 @@
+
+
 header {
   display: block;
   flex: 1;
@@ -377,7 +379,7 @@ p, .description {
 
   margin: 40px auto;
 
-  display: flex;
+  display: block;
 }
 
 div.container h2 {
@@ -420,9 +422,7 @@ footer a {
   background-color: var(--color-primary-lighter);
   box-shadow: 0 4px 16px -8px rgba(1, 1, 1, 0.1);
   border-radius: 8px;
-
   padding: 32px;
-
   margin-bottom: 32px;
 }
 
@@ -698,13 +698,25 @@ footer {
   /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #003445, #0967b4);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  list-style-type: none;
-  width: 100vw;
+  padding-bottom: 20px;
+}
 
+footer h2, footer p, footer a, footer span{
+  color: #D1D1D1
+}
+
+footer h2{
+  font-weight: 400;
 }
 
 footer ul {
   list-style-type: none;
+  padding: 0;
+}
+
+footer li {
+  list-style: none;
+
 }
 
 footer ul li {
@@ -713,6 +725,7 @@ footer ul li {
 
 footer a {
   color: #ffffff;
+  text-decoration: none;
 }
 
 #icones {
@@ -736,3 +749,65 @@ footer a {
 #infos {
   margin-left: 5%;
 }
+
+
+.footer-box{
+  width: 31%;
+  padding: 1%;
+  float: left;
+}
+
+footer .wrapper:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.footer-list li{
+  margin-bottom: 15px;
+}
+
+.footer-list a{
+  transition: .5s;
+}
+
+.footer-list a:hover{
+  color: #fff
+}
+
+.footer-list a:after{
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.articles-footer{
+  width: 80%;
+  float: center;
+}
+
+.footer-list.footer-article-list span{
+  display: block;
+  float: center;
+}
+
+.fab{
+  font-size: 30px;
+  margin-right: 10px;
+  float: left;
+}
+
+.footer-list li span{
+  float: none;
+  height: 30px;
+  line-height: 30px;
+}
+
+.footer-bottom p {
+  float: right;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-right: 30px;
+  color: #999;
+}
+
