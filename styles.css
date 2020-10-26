@@ -15,6 +15,10 @@ header nav ul li div a img {
   position: static;
 }
 
+#logo-box {
+  margin-left: -10px;
+}
+
 header nav ul li.logo-centro img {
   width: 270px;
   height: 110px;
@@ -250,7 +254,7 @@ a:hover {
     background: transparent;
   }
 
-  section.create-log label:hover {
+  header section.create-log label:hover {
     text-decoration: none;
     transition: all 0.25s;
   }
@@ -373,11 +377,13 @@ p, .description {
 }
 
 /* Padrão */
-#container {
-  width: 80%;
-  max-width: 980px;
-
-  margin: 40px auto;
+.container {
+  width: calc(100vw - 5%);
+  max-width: calc(100vw - 5%);
+  margin-top: 40px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 0;
 
   display: block;
 }
@@ -422,8 +428,17 @@ footer a {
   background-color: var(--color-primary-lighter);
   box-shadow: 0 4px 16px -8px rgba(1, 1, 1, 0.1);
   border-radius: 8px;
-  padding: 32px;
-  margin-bottom: 32px;
+  padding-top: 32px;
+  padding-right: 32px;
+  padding-left: 32px;
+  padding-bottom: 32px;
+  /* padding: 32px; */
+}
+
+@media (max-width: 1048px) {
+  .package {
+    margin-bottom: 20px;
+  }
 }
 
 .package img {
@@ -691,12 +706,13 @@ form button:hover {
 /* Footer */
 
 footer {
+  margin-top: 40px;
   color: #ffffff;
   clear: both;
-  background: #0967b4;
-  background: -webkit-linear-gradient(to right, #003445, #0967b4);
+  background: #011C25;
+  background: -webkit-linear-gradient(to right, #011C25, #003445);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #003445, #0967b4);
+  background: linear-gradient(to right, #011C25, #003445);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   padding-bottom: 20px;
 }
@@ -757,7 +773,7 @@ footer a {
   float: left;
 }
 
-footer .wrapper:after {
+footer div.wrapper-footer:after {
   clear: both;
   content: "";
   display: block;
@@ -779,6 +795,10 @@ footer .wrapper:after {
   clear: both;
   content: "";
   display: block;
+}
+
+div.footer-box h2 {
+  margin-bottom: 10px;
 }
 
 .articles-footer{
