@@ -1,5 +1,3 @@
-
-
 header {
   display: block;
   flex: 1;
@@ -349,6 +347,7 @@ li.lower {
   -o-transition: max-height 0.3s ease;
   transition: max-height 0.3s ease;
   border-radius: 0% 0% 40% 40%;
+  z-index: 6;
 }
 
 li.lower ul li {
@@ -460,6 +459,18 @@ footer a {
 .package .description {
   margin: 16px 0;
 }
+
+/* .promo {
+  background-image: url("./src/assets/images/destiny/rio-de-janeiro.jpg");
+}
+
+div.contente div,
+div.contente h3,
+div.contente p,
+div.contente a {
+  padding: 5px;
+  background-color: rgba(100, 100, 100, 0.5);
+} */
 
 
 /* Modal Sign Up */
@@ -773,6 +784,11 @@ footer a {
   float: left;
 }
 
+.wrapper-footer{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 footer div.wrapper-footer:after {
   clear: both;
   content: "";
@@ -831,3 +847,263 @@ div.footer-box h2 {
   color: #999;
 }
 
+
+/* Início Carrosel */
+/* .items-carrosel {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+}
+
+.items-carrosel .image-carrosel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: all 300ms ease-in-out;
+  z-index: -1;
+  opacity: 0;
+}
+
+.image-carrosel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-carrosel.active-carrosel {
+  opacity: 1;
+  z-index: 99;
+  box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
+}
+
+.image-carrosel.prev-carrosel {
+  z-index: 2;
+  opacity: 0.25;
+  transform: translate(-125%, -50%);
+}
+
+.image-carrosel.next-carrosel {
+  z-index: 2;
+  opacity: 0.25;
+  transform: translate(25%, -50%);
+}
+
+.items-carrosel .button-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 275px;
+  z-index: 100;
+}
+
+.button-container .button-carrosel {
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  position: relative;
+  opacity: 0.75;
+  transition: all 300ms ease-in-out;
+}
+
+.button-container .button-carrosel:hover {
+  opacity: 1;
+}
+
+.button-container .button-carrosel:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 50%;
+  z-index: -99;
+}
+
+.button-container .button-carrosel:nth-child(1) {
+  float: left;
+}
+
+.button-container .button-carrosel:nth-child(2) {
+  float: right;
+} */
+/* Fim Carrosel */
+
+/* Início Carrosel com tempo 1° versão  */
+/* .box-carrosel {
+  width: auto;
+ height: 300px;
+  overflow: hidden;
+  margin: 10% auto;
+  position: relative;
+  display: block;
+  padding: 10px 0;
+  background: #fff;
+  box-shadow: 0 0 5px 1px #000;
+  margin: 0 auto 40px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-size: auto;
+}
+
+.box-carrosel .nav-carrosel {
+  position: absolute;
+  display: block;
+  padding: 0 5px;
+  display: table;
+  height: 147px;
+  background: cornflowerblue;
+  color: #fff;
+  top: 25%;
+}
+
+.box-carrosel .nav-carrosel p {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.box-carrosel .nav-carrosel:hover {
+  background: #99ccff;
+}
+
+.box-carrosel .nav-carrosel.back {
+  left: 0;
+}
+
+.box-carrosel .nav-carrosel.forth {
+  right: 0;
+}
+
+.items-carrosel {
+  list-style: none;
+  width: 1000%;
+  float: left;
+  background: var(--color-background);
+  display: flex;
+}
+
+.image-carrosel img {
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
+  background-size: cover;
+  flex: 1;
+}
+
+.items-carrosel .image-carrosel {
+  float: left;
+  width: 570px;
+  padding: 10px;
+  margin-right: 10px;
+  background: #99ccff;
+} */
+
+/* Fim Carrosel com tempo 1° versão */
+
+/* Início Carrosel com tempo 2° versão */
+.box-carrosel {
+  position: relative;
+  width: calc(100vw - 5%);
+  z-index: 2;
+}
+
+.items-carrosel {
+  display: flex;
+
+  /* overflow-x: auto; */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+
+  scroll-behavior: smooth;
+}
+
+.image-carrosel {
+  flex: none;
+
+  width: 100%;
+  height: 400px;
+
+  scroll-snap-align: start;
+
+  pointer-events: none;
+}
+
+.image-carrosel img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* Fim Carrosel com tempo 2° versão */
+
+.box-carrosel {
+  overflow: hidden;
+
+  border-radius: 8px;
+  box-shadow: 0 0 5px 1px #000;
+  margin: 0 auto 40px;
+
+}
+
+.box-carrosel .nav-carrosel {
+  position: absolute;
+  display: block;
+  padding: 0 5px;
+  display: table;
+  height: 147px;
+  background: var(--color-header-background);
+  color: #fff;
+  top: 25%;
+  cursor: pointer;
+}
+
+.box-carrosel .nav-carrosel p {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.box-carrosel .nav-carrosel:hover {
+  background: #99ccff;
+}
+
+.box-carrosel .nav-carrosel.back {
+  left: 0;
+}
+
+.box-carrosel .nav-carrosel.forth {
+  right: 0;
+}
+
+.items-carrosel {
+  list-style: none;
+  width: 1000%;
+  float: left;
+  background: var(--color-background);
+}
+
+.image-carrosel img {
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
+}
+
+.items-carrosel .image-carrosel {
+  float: left;
+  width: calc(100vw);
+  background: #99ccff;
+}
