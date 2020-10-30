@@ -7,6 +7,7 @@
   --color-primary-package  : #011c25cb;
   --color-a-text           : #FFFFFF;
   --color-button-text      : #FFFFFF;
+  --color-text-in-primary  : #D4C2FF;
   --color-primary-lighter  : #9871F5;
   --color-primary-light    : #916BEA;
   --color-primary          : #8257E5;
@@ -15,7 +16,6 @@
   --color-secundary        : #04D361;
   --color-secundary-dark   : #04BF58;
   --color-title-in-primary : #FFFFFF;
-  --color-text-in-primary  : #D4C2FF;
   --color-text-title       : #32264D;
   --color-text-complement  : #9C98A6;
   --color-text-base        : #6A6180;
@@ -26,8 +26,8 @@
 }
 
 * {
-  margin    : 0;
-  padding   : 0;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -38,10 +38,10 @@ html {
 html,
 body,
 #root {
-  height         : 100vh;
-  width          : 100vw;
+  height: 100vh;
+  width: 100vw;
   justify-content: center;
-  align-items    : center;
+  align-items: center;
 }
 
 body {
@@ -49,8 +49,8 @@ body {
 }
 
 #root {
-  display        : flex;
-  align-items    : center;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 

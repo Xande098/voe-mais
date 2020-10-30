@@ -76,7 +76,9 @@
     <!-- Carrossel com destaques dos pacotes de viagens -->
     <!-- Início -->
     <div class="box-carrosel">
-      <div class="nav-carrosel back"><p>&laquo;</p></div>
+      <div class="nav-carrosel back">
+        <p>&laquo;</p>
+      </div>
       <div class="items-carrosel">
         <div class="image-carrosel active-carrosel">
           <img src="./src/assets/images/destiny/rio-de-janeiro.jpg">
@@ -98,14 +100,16 @@
           <div class="button-carrosel"><i class="fas fa-angle-right"></i></div>
         </div> -->
       </div>
-      <div class="nav-carrosel forth"><p>&raquo;</p></div>
+      <div class="nav-carrosel forth">
+        <p>&raquo;</p>
+      </div>
       <div class="clear"></div>
+      <p>Window resized <span id="test">0</span> times.</p>
     </div>
     <!-- Fim -->
 
-    <!-- <h2>Promoções</h2> -->
     <section id="last-travel-packages">
-      <div class="package promo">
+      <div class="package">
         <img src="./src/assets/images/icons/promotions.png" alt="Ícone de Promoções">
 
         <div class="contente">
@@ -114,7 +118,7 @@
           <div class="description">
             Pacotes com até 50% de desconto para diversos lugares no Brasil e exterior.
           </div>
-          <a href="#">Ver Pacotes de Viagens</a>
+          <a href="#" onclick="onOffPromo()">Ver Pacotes de Viagens</a>
         </div>
       </div>
 
@@ -276,6 +280,18 @@
           <a href="#" onclick="onOffSignIn()">Voltar</a>
           <button>Salvar</button>
 
+          <div id="forSign-up" class="item button secondary">
+            <span>Ainda não possui cadastro?</span>
+            <span>Cadastre-se:</span>
+            <section id="buttons" class="create-log forSign-up">
+              <label class="sign-up" onclick="onOffSignIn(),
+                onOffSignUp()">
+                Sign Up
+              </label>
+            </section>
+            <!-- <a href="#">Sign Up</a> -->
+          </div>
+
         </form>
 
       </div>
@@ -284,15 +300,161 @@
     <!-- Fim Modal Sign Up -->
     <!-- Fim do Modal -->
 
+    <!-- Início Page Promoções -->
+    <!-- Repetindo Header -->
 
-    
+    <!-- Fim Repetindo Header -->
 
+    <div id="modal-page-promo" class="box hide">
+      <div class="content-promo">
 
-    <!-- Início Footer -->
-    <!-- <footer>
-      Com ❤ <a href="https://www.linkedin.com/in/alexandre-sobota-95839ba2" target="_blank">Alexandre</a>
-    </footer> -->
-    <!-- Fim Footer -->
+        <nav id="wrapper">
+          <ul class="menu">
+            <li class="logo">
+              <div id="logo-box">
+                <a href="./index.html">
+                  <img src="./src/assets/images/logo.png" alt="Voe+">
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+
+        <h1>Confira nossas ofertas:</h1>
+
+        <section id="last-travel-packages" class="section-promo">
+
+          <div class="package sale">
+            <div id="box-image-promo">
+              <img src="./src/assets/images/destiny/dubai.jpg" alt="Imagem Dubai">
+            </div>
+
+            <div class="contente pack">
+              <h3>Dubai</h3>
+              <span>De: <br>
+                <b>Rio de Janeiro</b><br>
+              </span>
+              <div class="description">
+                Pague parcelado em 12x | Ida e Volta <br>Taxas Inclusas<br>
+                a partir de
+              </div>
+              <p id="price"> R$ 5.231,00 <br>
+                <button class="bt_buy">Comprar</button>
+              </p>
+            </div>
+          </div>
+
+          <div class="package sale">
+            <div id="box-image-promo">
+              <img src="./src/assets/images/destiny/rio-de-janeiro.jpg" alt="Imagem Rio de Janeiro">
+            </div>
+
+            <div class="contente pack">
+              <h3>Rio de Janeiro</h3>
+              <span>De: <br>
+                <b>Porto Alegre</b><br>
+              </span>
+              <div class="description">
+                Pague parcelado am 10x |Ida e Volta <br>Taxas Inclusas<br>
+                a partir de
+              </div>
+              <p id="price"> R$ 459,93 <br>
+                <button class="bt_buy">Comprar</button>
+              </p>
+            </div>
+          </div>
+
+          <div class="package sale">
+            <div id="box-image-promo">
+              <img src="./src/assets/images/destiny/chile_ilha_de_pascoa.jpg" alt="Imagem Ilha da páscoa Chile">
+            </div>
+
+            <div class="contente pack">
+              <h3>Ilha de Páscoa</h3>
+              <span>De: <br>
+                <b>São Paulo</b><br>
+              </span>
+              <div class="description">
+                Pague parcelado am 10x |7 dias <br> incluso hostel, translado<br> almoço e café da manhã<br>
+                a partir de
+              </div>
+              <p id="price"> R$ 3.889,63 <br>
+                <button class="bt_buy">Comprar</button>
+              </p>
+            </div>
+          </div>
+
+          <div class="package sale">
+            <div id="box-image-promo">
+              <img src="./src/assets/images/destiny/colorado-aspen.jpg" alt="Aspen Colorado">
+            </div>
+
+            <div class="contente pack">
+              <h3>Aspen</h3>
+              <span>De: <br>
+                <b>São Paulo</b><br>
+              </span>
+              <div class="description">
+                Pague parcelado em 10x | 7 dias <br> incluso hospedagem, translado<br> e café da manhã<br>
+                a partir de
+              </div>
+              <p id="price"> R$ 16.653,00 <br>
+                <button class="bt_buy">Comprar</button>
+              </p>
+            </div>
+          </div>
+
+          <div class="package sale">
+            <div id="box-image-promo">
+              <img src="./src/assets/images/destiny/londres-tower-bridge.jpg" alt="Aspen Colorado">
+            </div>
+
+            <div class="contente pack">
+              <h3>Londres</h3>
+              <span>De: <br>
+                <b>Porto Alegre</b><br>
+              </span>
+              <div class="description">
+                Pague parcelado am 14x | 7 dias <br>
+                incluso hospedagem, translado,<br> lanche e café da manhã<br>
+                a partir de
+              </div>
+              <p id="price"> R$ 15.549,63 <br>
+                <button class="bt_buy">Comprar</button>
+              </p>
+            </div>
+          </div>
+
+          <div class="package sale">
+            <div id="box-image-promo">
+              <img src="./src/assets/images/destiny/argentina-patagonia.jpg" alt="Aspen Colorado">
+            </div>
+
+            <div class="contente pack">
+              <h3>Patagônia</h3>
+              <span>De: <br>
+                <b>São Paulo</b><br>
+              </span>
+              <div class="description">
+                Pague parcelado em 10x | 4 dias <br>
+                incluso hospedagem e café da manhã<br>
+                a partir de
+              </div>
+              <p id="price"> R$ 2.783,00 <br>
+                <button class="bt_buy">Comprar</button>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <a href="#" onclick="onOffPromo()">Voltar</a>
+
+      </div>
+
+    </div>
+
+    <!-- Fim Page Promoções -->
+
 
   </div>
 
@@ -303,10 +465,10 @@
         <div class="articles-footer">
           <h2>Conheça-nos</h2>
           <ul class="footer-list footer-article-list">
-              <li><a href="#">Sobre a Empresa</a></li>
-              <li><a href="#">Princípios</a></li>
-              <li><a href="#">Trabalhe Conosco</a></li>
-              <a href="#">Perguntas Frequentes</a>
+            <li><a href="#">Sobre a Empresa</a></li>
+            <li><a href="#">Princípios</a></li>
+            <li><a href="#">Trabalhe Conosco</a></li>
+            <a href="#">Perguntas Frequentes</a>
           </ul>
 
         </div>
@@ -357,9 +519,9 @@
       </div>
 
     </div>
-  
+
   </footer>
-  
+
   <!-- Fim Footer -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
