@@ -409,7 +409,7 @@ div.container h2 {
 .package {
   display: flex;
 
-  background-color: var(--color-primary-lighter);
+  background-color: var(--color-primary-package);
   box-shadow: 0 4px 16px -8px rgba(1, 1, 1, 0.1);
   border-radius: 18px;
   padding-top: 32px;
@@ -438,7 +438,7 @@ div.container h2 {
 
 .package p {
   margin: 8px 0;
-  color: #777;
+  color: var(--package-p-color);
 }
 
 .package .description {
