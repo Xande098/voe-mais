@@ -134,31 +134,22 @@ function onOffPromo() {
     .toggle("addScroll")
 }
 
-function checkFields(event) {
+// Modal - Página Pacotes a venda modal-page-packages-for-sale
+function onOffPackSale() {
+  document
+    .querySelector("#modal-page-packages-for-sale")
+    .classList
+    .toggle("hide")
 
-  const valuesToCheck = [
-    "title",
-    "category",
-    "image",
-    "description",
-    "link",
-  ]
+  document
+    .querySelector("body")
+    .classList
+    .toggle("hideScroll")
 
-  const isEmpty = valuesToCheck.find(function (value) {
-
-    const checkIfIsString = typeof event.target[value].value === "string";
-    const checkIfIsEmpty = !event.target[value].value.trim()
-
-    if (checkIfIsString && checkIfIsEmpty) {
-      return true
-    }
-  })
-
-  if (isEmpty) {
-    event.preventDefault()
-    alert("Por favor, preencha todos os campos!");
-  }
-
+  document
+    .querySelector("#modal-page-packages-for-sale")
+    .classList
+    .toggle("addScroll")
 }
 
 
@@ -309,3 +300,7 @@ function countResize() {
 }) */
 
 /* Fim Carrosel com tempo 2° versão */
+
+
+/* Início Botão Topo */
+/* Fim Botão Topo */
