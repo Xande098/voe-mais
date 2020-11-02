@@ -197,13 +197,13 @@ update(); */
 /* Início Carrosel com tempo */
 
 
-document.getElementsByTagName("BODY")[0].onresize = function () { controlWidth() };
+/* document.getElementsByTagName("BODY")[0].onresize = function () { controlWidth() };
 
 function controlWidth() {
   var widthText = outerWidth;
   document.getElementById("test").innerHTML = widthText;
 
-  function carrosel() {
+  function carrosel() { */
     $(function () {
   
       var numImages = 1;
@@ -227,7 +227,7 @@ function controlWidth() {
         }
       });
   
-      function automatizar(segundos) {
+      /* function automatizar(segundos) {
         var back = null;
   
         var auto = setInterval(function () {
@@ -254,35 +254,20 @@ function controlWidth() {
         }, segundos * 1000);
       }
   
-      automatizar(3);
+      automatizar(3); */
     });
-  };
+  /* }; */
 
-  if (widthText) {
+/*   if (widthText) { */
    /*  alert('Olá my friend'); */
-    $('.active-carrosel').addClass('initial');
+/*     $('.active-carrosel').addClass('initial');
     $('.active-carrosel').removeClass('initial');
   } else {
 
   }
-}
-
-
-
-
-/* document.getElementsByTagName("BODY")[0].onresize = function redimensionar() { countResize() };
-
-var x = 0;
-function countResize() {
-  var txt = x += 1;
-  document.getElementById("test").innerHTML = txt;
 } */
 
-/* if (txt >= 1) {
-  images = carrosel();
-  redimensionar(images);
-}
- */
+
 
 /* Fim Carrosel com tempo */
 
