@@ -17,7 +17,7 @@
 <body>
   <!-- Início do Header -->
   <!-- Inclui MENU.PHP  -->
-  <?php require 'Menu.php'; ?>
+  <?php require 'menu.php'; ?>
   <!-- Fim do Header -->
 
   <div class="container">

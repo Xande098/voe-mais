@@ -95,6 +95,22 @@ a:hover {
   white-space: nowrap;
 }
 
+#hello-user {
+  position: relative;
+}
+
+#hello-user span {
+  max-width: 90vw;
+  color: var(--color-user-color);
+  margin-left: 120px;
+  margin-top: -30px;
+  font-size: 1.6rem;
+  background-color: #01222d;
+  padding: 4px;
+  border-radius: 8px;
+  position: absolute;
+}
+
 .logo a,
 .toggle a {
   font-size: 20px;
@@ -263,7 +279,7 @@ a:hover {
   }
 
   .button.secondary label:hover {
-    color: var(--color-button-text) 0.6;
+    color: rgb(211, 200, 200, 0.6);
   }
 
   .button:not(.secondary) a:hover {
@@ -535,16 +551,16 @@ div.contente a {
 .content-signup form div:nth-child(13),
 .content-signup form div:nth-child(14),
 .content-signup form div:nth-child(15),
-.content-signup form div:nth-child(16) {
+.content-signup form div:nth-child(16),
+.content-signup form div:nth-child(17) {
   grid-column: span 2;
 }
 
-/* .content-signup form div:nth-child(15),
-.content-signup form div:nth-child(16) {
+.content-signup form div:nth-child(1) {
   grid-column: span 4;
-} */
+}
 
-form input {
+form .input-wrapper input {
   width: 100%;
 
   padding: 12px;
@@ -564,7 +580,8 @@ for label {
   letter-spacing: 0.8px;
 }
 
-form a {
+form a,
+form input.bt-signup-voltar {
   width: 150px;
   height: 40px;
 
@@ -585,14 +602,16 @@ form a {
   transition: 400ms;
 }
 
-form a:hover {
+form a:hover,
+form input.bt-signup-voltar:hover {
   background: #fff;
   color: #1C1C1C;
 
   text-decoration: none;
 }
 
-form button{
+form button,
+form input.bt-signup-salvar {
   background: #8257E5;
   color: #1C1C1C;
   font-weight: 700;
@@ -614,7 +633,8 @@ form button{
 
 }
 
-form button:hover {
+form button:hover,
+form input.bt-signup-salvar:hover {
   background-color: #0984e3;
   color: white;
 

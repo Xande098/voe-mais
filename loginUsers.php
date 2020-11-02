@@ -7,16 +7,31 @@
 
       <div class="input-wrapper">
         <label for="title">Login</label>
-        <input type="text" name="title">
+        <input
+          name="cpf_cliente"
+          type="text"
+          pattern="^(\d{3}\.\d{3}\.\d{3}-\d{2})|(\d{11})$"
+          placeholder="888.888.888-88"
+          title="Seu login é o seu CPF."
+          required
+        >
       </div>
 
       <div class="input-wrapper">
         <label for="title">Senha</label>
-        <input type="password" name="title">
+        <input
+          type="password"
+          name="senha"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,8}"
+          title="Deve conter ao menos um número, uma letra maiúscula e minúscula, um caracter especial, com 6 a 8 caracteres"
+          required
+        >
       </div>
 
-      <a href="#" onclick="onOffSignIn()">Voltar</a>
-      <button>Salvar</button>
+      <!-- <a href="#" onclick="onOffSignIn()">Voltar</a>
+      <button>Salvar</button> -->
+      <input type="button" value="Voltar" class="bt-signup-voltar" onclick="onOffSignIn()">
+      <input type="submit" value="Salvar" class="bt-signup-salvar">
 
       <div id="forSign-up" class="item button secondary mark">
         <span>Ainda não possui cadastro?</span>

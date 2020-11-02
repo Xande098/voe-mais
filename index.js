@@ -44,7 +44,7 @@ function onOffSignUp() {
     .toggle("addScroll")
 }
 
-function checkFields(event) {
+/* function checkFields(event) {
 
   const valuesToCheck = [
     "title",
@@ -69,7 +69,7 @@ function checkFields(event) {
     alert("Por favor, preencha todos os campos!");
   }
 
-}
+} */
 
 // Modal - Sign In
 function onOffSignIn() {
