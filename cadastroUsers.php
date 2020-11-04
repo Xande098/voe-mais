@@ -182,8 +182,8 @@
           <input
             type="text"
             name="nomeBairro"
-            pattern="[a-zA-Z\u00C0-\u00FF ]{5,30}$"
-            title="Digite o Bairro de 5 à 30 letras."
+            pattern="[a-zA-Z\u00C0-\u00FF ]{3,30}$"
+            title="Digite o Bairro de 3 à 30 letras."
             placeholder="Centro"
             required  
           >

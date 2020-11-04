@@ -9,7 +9,7 @@ echo $data;
 echo "</p> " */
 ?>
 
-<!-- Acesso ao BD-->
+<!-- Acesso ao BD tabela tipo_telefone-->
 <?php
 
 $servername = "localhost:3307";
@@ -19,27 +19,423 @@ $database = "voemais";
 
 
 $tipoTel = $_POST['tipoTel'];
+$acao    = $_POST['acaoForm'];
+
+
+// Cria conexão
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+// Verifica conexão
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+// Configura para trabalhar com caracteres acentuados do português
+mysqli_query($conn, "SET NAMES 'utf8'");
+mysqli_query($conn, "SET NAMES 'utf8'");
+mysqli_query($conn, 'SET character_set_connection=utf8');
+mysqli_query($conn, 'SET character_set_client=utf8');
+mysqli_query($conn, 'SET character_set_results=utf8');
+
+
+// Faz Select na Base de Dados
+/* $sql = "SELECT id_tipoTel, tipoTel FROM tipo_telefone";
+echo "<div class='não-sei'>";
+if ($result = mysqli_query($conn, $sql)) {
+  echo "	  tipoTel";
+  if (mysqli_num_rows($result) > 0) {
+    // Apresenta cada linha da tabela
+    while ($row = mysqli_fetch_assoc($result)) {
+      if ($row == $tipoTel && $tipoTel == "tipoTel") {
+        echo $row["tipoTel"];
+      }
+    }
+  }
+  if ($acao == "Contratar")
+    echo "1 - Um registro adicionado!";
+  else
+    echo "1 - Um registro alterado!";
+} else {
+  echo "1 - Erro executando INSERT: " . mysqli_error($conn);
+}
+echo "</div>";
+mysqli_close($conn); */
+
+// Faz Select na Base de Dados
+$sql = "INSERT INTO tipo_telefone (id_tipoTel, tipoTel) VALUES ('default','$tipoTel')";
+if ($result = mysqli_query($conn, $sql)) {
+  echo "<div class='não-sei'>";
+  if ($acao == "Contratar")
+    echo "1 - Um registro adicionado!";
+  else
+    echo "1 - Um registro alterado!";
+} else {
+  echo "1 - Erro executando INSERT: " . mysqli_error($conn);
+}
+echo "</div>";
+mysqli_close($conn);  //Encerra conexao com o BD
+
+?>
+
+<!-- Acesso ao BD tabela telefone-->
+<?php
+
+$servername = "localhost:3307";
+$username = "userVoe";
+$password = "1234";
+$database = "voemais";
+
+
 $celular = $_POST['numTel'];
-/* $id_tipoTel = $_POST['id_tipoTel']; */
+$acao    = $_POST['acaoForm'];
+
+// Cria conexão
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+// Verifica conexão
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+// Configura para trabalhar com caracteres acentuados do português
+mysqli_query($conn, "SET NAMES 'utf8'");
+mysqli_query($conn, "SET NAMES 'utf8'");
+mysqli_query($conn, 'SET character_set_connection=utf8');
+mysqli_query($conn, 'SET character_set_client=utf8');
+mysqli_query($conn, 'SET character_set_results=utf8');
+
+
+// Faz Select na Base de Dados
+$sql = "INSERT INTO telefone (id_telefone, id_tipoTel, numTel) VALUES (
+  default,
+  (SELECT MAX(id_tipoTel) FROM tipo_telefone),
+  '$celular')";
+if ($result = mysqli_query($conn, $sql)) {
+  echo "<div class='não-sei'>";
+  if ($acao == "Contratar")
+    echo "2 - Um registro adicionado!";
+  else
+    echo "2 - Um registro alterado!";
+} else {
+  echo "2 - Erro executando INSERT: " . mysqli_error($conn);
+}
+echo "</div>";
+mysqli_close($conn);  //Encerra conexao com o BD
+
+?>
+
+<!-- Acesso ao BD tabela tipo_logradouro-->
+<?php
+
+$servername = "localhost:3307";
+$username = "userVoe";
+$password = "1234";
+$database = "voemais";
+
+
 $tipoLogradouro = $_POST['tipoLogradouro'];
+$acao    = $_POST['acaoForm'];
+
+
+// Cria conexão
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+// Verifica conexão
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+// Configura para trabalhar com caracteres acentuados do português
+mysqli_query($conn, "SET NAMES 'utf8'");
+mysqli_query($conn, "SET NAMES 'utf8'");
+mysqli_query($conn, 'SET character_set_connection=utf8');
+mysqli_query($conn, 'SET character_set_client=utf8');
+mysqli_query($conn, 'SET character_set_results=utf8');
+
+
+// Tipo de telefone pode ser: 'Celular', 'Trabalho', 'Casa', 'Recado'
+// Faz Select na Base de Dados
+
+/* $sql = "SELECT id_logradouro, tipoLogradouro FROM tipo_logradouro";
+
+echo "<div class='não-sei'>";
+if ($result = mysqli_query($conn, $sql)) {
+  echo "	  tipoLogradouro";
+  if (mysqli_num_rows($result) > 0) {
+    // Apresenta cada linha da tabela
+    while ($row = mysqli_fetch_assoc($result)) {
+      if ($row == $tipoLogradouro && $tipoLogradouro == "tipoLogradouro") {
+        echo $row["tipoLogradouro"];
+      }
+    }
+  }
+  if ($acao == "Contratar")
+    echo "3 - Um registro adicionado!";
+  else
+    echo "3 - Um registro alterado!";
+} else {
+  echo "3 - Erro executando INSERT: " . mysqli_error($conn);
+}
+echo "</div>";
+mysqli_close($conn); */
+
+$sql = "INSERT INTO tipo_logradouro (id_logradouro, tipoLogradouro) VALUES (default,'$tipoLogradouro')";
+if ($result = mysqli_query($conn, $sql)) {
+  echo "<div class='não-sei'>";
+  if ($acao == "Contratar")
+    echo "3 - Um registro adicionado!";
+  else
+    echo "3 - Um registro alterado!";
+} else {
+  echo "3 - Erro executando INSERT: " . mysqli_error($conn);
+}
+echo "</div>";
+mysqli_close($conn);  //Encerra conexao com o BD
+
+?>
+
+<!-- Acesso ao BD tabela bairro-->
+<?php
+
+$servername = "localhost:3307";
+$username = "userVoe";
+$password = "1234";
+$database = "voemais";
+
+
 $nomeBairro = $_POST['nomeBairro'];
+$acao    = $_POST['acaoForm'];
+
+// Cria conexão
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+// Verifica conexão
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+// Configura para trabalhar com caracteres acentuados do português
+mysqli_query($conn, "SET NAMES 'utf8'");
+mysqli_query($conn, "SET NAMES 'utf8'");
+mysqli_query($conn, 'SET character_set_connection=utf8');
+mysqli_query($conn, 'SET character_set_client=utf8');
+mysqli_query($conn, 'SET character_set_results=utf8');
+
+
+// Faz Select na Base de Dados
+$sql = "INSERT INTO bairro (id_bairro, nomeBairro) VALUES (default,'$nomeBairro')";
+if ($result = mysqli_query($conn, $sql)) {
+  echo "<div class='não-sei'>";
+  if ($acao == "Contratar")
+    echo "4 - Um registro adicionado!";
+  else
+    echo "4 - Um registro alterado!";
+} else {
+  echo "4 - Erro executando INSERT: " . mysqli_error($conn);
+}
+echo "</div>";
+mysqli_close($conn);  //Encerra conexao com o BD
+
+?>
+
+<!-- Acesso ao BD tabela cidade-->
+<?php
+
+$servername = "localhost:3307";
+$username = "userVoe";
+$password = "1234";
+$database = "voemais";
+
+
 $nomeCidade = $_POST['nomeCidade'];
+$acao    = $_POST['acaoForm'];
+
+// Cria conexão
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+// Verifica conexão
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+// Configura para trabalhar com caracteres acentuados do português
+mysqli_query($conn, "SET NAMES 'utf8'");
+mysqli_query($conn, "SET NAMES 'utf8'");
+mysqli_query($conn, 'SET character_set_connection=utf8');
+mysqli_query($conn, 'SET character_set_client=utf8');
+mysqli_query($conn, 'SET character_set_results=utf8');
+
+
+// Faz Select na Base de Dados
+$sql = "INSERT INTO cidade (id_cidade, nomeCidade) VALUES (default,'$nomeCidade')";
+if ($result = mysqli_query($conn, $sql)) {
+  echo "<div class='não-sei'>";
+  if ($acao == "Contratar")
+    echo "5 - Um registro adicionado!";
+  else
+    echo "5 - Um registro alterado!";
+} else {
+  echo "5 - Erro executando INSERT: " . mysqli_error($conn);
+}
+echo "</div>";
+mysqli_close($conn);  //Encerra conexao com o BD
+
+?>
+
+<!-- Acesso ao BD tabela estado-->
+<?php
+
+$servername = "localhost:3307";
+$username = "userVoe";
+$password = "1234";
+$database = "voemais";
+
+
 $nomeEstado = $_POST['nomeEstado'];
-/* $id_cidade = $_POST['id_cidade']; */
+$acao    = $_POST['acaoForm'];
+
+
+// Cria conexão
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+// Verifica conexão
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+// Configura para trabalhar com caracteres acentuados do português
+mysqli_query($conn, "SET NAMES 'utf8'");
+mysqli_query($conn, "SET NAMES 'utf8'");
+mysqli_query($conn, 'SET character_set_connection=utf8');
+mysqli_query($conn, 'SET character_set_client=utf8');
+mysqli_query($conn, 'SET character_set_results=utf8');
+
+
+// Faz Select na Base de Dados
+$sql = "INSERT INTO estado (id_estado, id_cidade, nomeEstado) VALUES (
+  default,
+  (SELECT MAX(id_cidade) FROM cidade),
+  '$nomeEstado')";
+if ($result = mysqli_query($conn, $sql)) {
+  echo "<div class='não-sei'>";
+  if ($acao == "Contratar")
+    echo "6 - Um registro adicionado!";
+  else
+    echo "6 - Um registro alterado!";
+} else {
+  echo "6 - Erro executando INSERT: " . mysqli_error($conn);
+}
+echo "</div>";
+mysqli_close($conn);  //Encerra conexao com o BD
+
+?>
+
+<!-- Acesso ao BD tabela pais-->
+<?php
+
+$servername = "localhost:3307";
+$username = "userVoe";
+$password = "1234";
+$database = "voemais";
+
+
 $nomePais = $_POST['nomePais'];
-/* $id_estado = $_POST['id_estado']; */
+$acao    = $_POST['acaoForm'];
+
+
+// Cria conexão
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+// Verifica conexão
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+// Configura para trabalhar com caracteres acentuados do português
+mysqli_query($conn, "SET NAMES 'utf8'");
+mysqli_query($conn, "SET NAMES 'utf8'");
+mysqli_query($conn, 'SET character_set_connection=utf8');
+mysqli_query($conn, 'SET character_set_client=utf8');
+mysqli_query($conn, 'SET character_set_results=utf8');
+
+
+// Faz Select na Base de Dados
+$sql = "INSERT INTO pais (id_pais, id_estado, nomePais) VALUES (
+  default,
+  (SELECT MAX(id_estado) FROM estado),
+  '$nomePais')";
+if ($result = mysqli_query($conn, $sql)) {
+  echo "<div class='não-sei'>";
+  if ($acao == "Contratar")
+    echo "7 - Um registro adicionado!";
+  else
+    echo "7 - Um registro alterado!";
+} else {
+  echo "7 - Erro executando INSERT: " . mysqli_error($conn);
+}
+echo "</div>";
+mysqli_close($conn);  //Encerra conexao com o BD
+
+?>
+
+<!-- Acesso ao BD tabela endereco-->
+<?php
+
+$servername = "localhost:3307";
+$username = "userVoe";
+$password = "1234";
+$database = "voemais";
+
+
 $nomeRua = $_POST['nomeRua'];
 $numRua = $_POST['numRua'];
-/* $id_logradouro = $_POST['id_logradouro']; */
-/* $id_bairro = $_POST['id_bairro']; */
-/* $id_pais = $_POST['id_pais']; */
+$acao    = $_POST['acaoForm'];
+
+
+// Cria conexão
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+// Verifica conexão
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+// Configura para trabalhar com caracteres acentuados do português
+mysqli_query($conn, "SET NAMES 'utf8'");
+mysqli_query($conn, "SET NAMES 'utf8'");
+mysqli_query($conn, 'SET character_set_connection=utf8');
+mysqli_query($conn, 'SET character_set_client=utf8');
+mysqli_query($conn, 'SET character_set_results=utf8');
+
+
+// Faz Select na Base de Dados
+$sql = "INSERT INTO endereco (id_endereco, id_logradouro, id_bairro, id_pais, nomeRua, numRua) VALUES (
+  'default',
+  (SELECT MAX(id_logradouro) FROM tipo_logradouro),
+  (SELECT MAX(id_bairro) FROM bairro),
+  (SELECT MAX(id_pais) FROM pais),
+  '$nomeRua',
+  '$numRua')";
+if ($result = mysqli_query($conn, $sql)) {
+  echo "<div class='não-sei'>";
+  if ($acao == "Contratar")
+    echo "8 - Um registro adicionado!";
+  else
+    echo "8 - Um registro alterado!";
+} else {
+  echo "8 - Erro executando INSERT: " . mysqli_error($conn);
+}
+echo "</div>";
+mysqli_close($conn);  //Encerra conexao com o BD
+
+?>
+
+<!-- Acesso ao BD tabela cliente-->
+<?php
+
+$servername = "localhost:3307";
+$username = "userVoe";
+$password = "1234";
+$database = "voemais";
+
+
 $login   = $_POST['cpf_cliente'];
 $nomeCliente = $_POST['nomeCliente'];
 $sobrenomeCliente = $_POST['sobrenomeCliente'];
 $email = $_POST['email'];
 $dtNasc  = $_POST['DataNasc'];
-/* $id_endereco  = $_POST['id_endereco']; */
-/* $id_telefone  = $_POST['id_telefone']; */
 $acao    = $_POST['acaoForm'];
 
 if ($dtNasc != "") {
@@ -62,7 +458,6 @@ $md5Senha = md5($_POST['senha']);
 
 // Cria conexão
 $conn = mysqli_connect($servername, $username, $password, $database);
-/* $conn = mysqli_connect($servername, $username, $password, $database); */
 
 // Verifica conexão
 if (!$conn) {
@@ -76,36 +471,13 @@ mysqli_query($conn, 'SET character_set_client=utf8');
 mysqli_query($conn, 'SET character_set_results=utf8');
 
 
-// Tipo de telefone pode ser: 'Celular', 'Trabalho', 'Casa', 'Recado'
 // Faz Select na Base de Dados
-$sql = "INSERT INTO tipo_telefone (default, tipoTel) VALUES ('$tipoTel')";
-/* $sql = "INSERT INTO telefone (numTel, id_tipoTel) VALUES ('$celular','$id_tipoTel')"; */
-$sql = "INSERT INTO telefone (default, id_tipoTel, numTel) VALUES (
-  (SELECT MAX(id_tipoTel) FROM tipo_telefone),
-  '$celular')";
-$sql = "INSERT INTO tipo_logradouro (default, tipoLogradouro) VALUES ('$tipoLogradouro')";
-$sql = "INSERT INTO bairro (default, nomeBairro) VALUES ('$nomeBairro')";
-$sql = "INSERT INTO cidade (default, nomeCidade) VALUES ('$nomeCidade')";
-/* $sql = "INSERT INTO estado (nomeEstado, id_cidade) VALUES ('$nomeEstado', '$id_cidade')"; */
-$sql = "INSERT INTO estado (default, id_cidade, nomeEstado) VALUES (
-  (SELECT MAX(id_cidade) FROM cidade),
-  '$nomeEstado')";
-/* $sql = "INSERT INTO pais (nomePais, id_estado) VALUES ('$nomePais', '$id_estado')"; */
-$sql = "INSERT INTO pais (default, id_estado, nomePais) VALUES (
-  (SELECT MAX(id_estado) FROM estado),
-  '$nomePais')";
-/* $sql = "INSERT INTO endereco (nomeRua, numRua, id_logradouro, id_bairro, id_pais) VALUES ('$nomeRua', '$numRua', '$id_logradouro', '$id_bairro', '$id_pais')"; */
-$sql = "INSERT INTO endereco (default, id_logradouro, id_bairro, id_pais, nomeRua, numRua) VALUES (
-  (SELECT MAX(id_logradouro) FROM tipo_logradouro),
-  (SELECT MAX(id_bairro) FROM bairro),
-  (SELECT MAX(id_pais) FROM pais),
-  '$nomeRua',
-  '$numRua')";
+
 /* $sql = "INSERT INTO cliente (cpf_cliente, nomeCliente, sobrenomeCliente, email, dataNasc, senha, id_endereco, id_telefone) VALUES ('$login','$nomeCliente','$sobrenomeCliente','$email','$dtNasc', '$md5Senha', '$id_endereco', '$id_telefone')"; */
-$sql = "INSERT INTO cliente (id_endereco, id_telefone, cpf_cliente, nomeCliente, sobrenomeCliente, email, dataNasc, senha) VALUES (
+$sql = "INSERT INTO cliente (cpf_cliente, id_endereco, id_telefone, nomeCliente, sobrenomeCliente, email, dataNasc, senha) VALUES (
+  '$login',
   (SELECT MAX(id_endereco) FROM endereco),
   (SELECT MAX(id_telefone) FROM telefone),
-  '$login',
   '$nomeCliente',
   '$sobrenomeCliente',
   '$email',
@@ -116,11 +488,11 @@ $sql = "INSERT INTO cliente (id_endereco, id_telefone, cpf_cliente, nomeCliente,
 if ($result = mysqli_query($conn, $sql)) {
   echo "<div class='não-sei'>";
   if ($acao == "Contratar")
-    echo "Um registro adicionado!";
+    echo "9 - Um registro adicionado!";
   else
-    echo "Um registro alterado!";
+    echo "9 - Um registro alterado!";
 } else {
-  echo "Erro executando INSERT: " . mysqli_error($conn);
+  echo "9 - Erro executando INSERT: " . mysqli_error($conn);
 }
 echo "</div>";
 mysqli_close($conn);  //Encerra conexao com o BD
