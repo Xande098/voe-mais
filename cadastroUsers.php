@@ -223,5 +223,8 @@
     </div>
 
   </div>
+  <div id="sair-home">
+    <a href="./index.php"></a>
+  </div>
 </div>
 <!-- Fim Modal Sign Up -->

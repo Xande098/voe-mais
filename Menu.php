@@ -4,7 +4,7 @@
     <ul class="menu">
       <li class="logo">
         <div id="logo-box">
-          <a href="./index.html">
+          <a href="./index.php">
             <img src="./src/assets/images/logo.png" alt="Voe+">
           </a>
         </div>

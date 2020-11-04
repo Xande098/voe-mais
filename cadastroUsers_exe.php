@@ -498,3 +498,6 @@ echo "</div>";
 mysqli_close($conn);  //Encerra conexao com o BD
 
 ?>
+
+<!-- Volta para a home depois de ter feito o form -->
+<body onload='window.history.back();'>
