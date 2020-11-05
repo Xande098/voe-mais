@@ -45,13 +45,17 @@
       </li>
       <li class="item button">
         <section id="buttons" class="create-log">
-          <label class="sign-in" onclick="onOffSignIn()">Log In</label>
+          <label class="sign-in" onclick="onOffSignIn()">Atualizar Perfil</label>
         </section>
         <!-- <a href="#">Log In</a> -->
       </li>
       <li class="item button secondary">
         <section id="buttons" class="create-log">
-          <label class="sign-up" onclick="onOffSignUp()">Sign Up</label>
+          <?php
+            $deslogar = setcookie("CookieTeste", "", time() - 3600);
+            echo "<label class='sign-up'>Sair $deslogar</label>"
+          ?>
+          <!-- <label class="sign-up">Sair</label> -->
         </section>
         <!-- <a href="#">Sign Up</a> -->
       </li>

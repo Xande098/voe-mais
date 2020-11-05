@@ -28,7 +28,7 @@ if (isset($acao)) {
       .href='index.php';</script>";
       die();
     } else {
-      setcookie("login",$login);
+      setcookie("login", $login, time()+3600); /* expira em 1 hora */
       header("Location:index.php");
     }
 }
@@ -36,9 +36,4 @@ if (isset($acao)) {
 // fecha a conexão
 mysqli_close($conn);
 
-?>
-
-<?php
-// Configura a data de expiração para uma hora atrás
-setcookie("login", "", time() - 3600);
 ?>

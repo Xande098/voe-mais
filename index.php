@@ -18,26 +18,35 @@
   <!-- Início do Header -->
   <!-- Inclui MENU.PHP  -->
   <?php
-    if ($_COOKIE['login'] !== "" & $_COOKIE['login'] !== null) {
-      require 'menuLogin.php';
-    } else {
-      require 'menu.php';
-    }
+  if ($_COOKIE['login'] !== "" & $_COOKIE['login'] !== null) {
+    require 'menuLogin.php';
+  } else {
+    require 'menu.php';
+  }
   ?>
   <!-- Fim do Header -->
 
   <?php
   $login_cookie = $_COOKIE['login'];
-    if(isset($login_cookie)){
-      echo"Bem-Vindo, $login_cookie <br>";
-      echo"Essas informações <font color='red'>PODEM</font> ser acessadas por você";
-    }else{
-      echo"Bem-Vindo, convidado <br>";
-      echo"Essas informações <font color='red'>NÃO PODEM</font> ser acessadas por você";
-      echo"<br><a href='login.html'>Faça Login</a> Para ler o conteúdo";
-    }
-    print_r($_COOKIE);
-?>
+  if (isset($login_cookie)) {
+    echo "Bem-Vindo, $login_cookie <br>";
+    echo "Essas informações <font color='red'>PODEM</font> ser acessadas por você";
+  } else {
+    echo "Bem-Vindo, convidado <br>";
+    echo "Essas informações <font color='red'>NÃO PODEM</font> ser acessadas por você";
+    echo "<br><a href='login.html'>Faça Login</a> Para ler o conteúdo";
+  }
+  print_r($_COOKIE);
+  
+  ?>
+
+  <?php
+    $deslogar = setcookie("CookieTeste", "", time() - 3600);
+    echo"<button>Deslogar, $deslogar</button>"
+  ?>
+
+  
+
 
   <div class="container">
 
@@ -84,7 +93,7 @@
 
   <!-- Início Footer -->
   <!-- Inclui RODAPE.PHP  -->
-  <?php require 'rodape.php';?>
+  <?php require 'rodape.php'; ?>
   <!-- Fim Footer -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
