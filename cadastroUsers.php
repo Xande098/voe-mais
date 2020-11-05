@@ -5,7 +5,7 @@
     <h1>Tela de Cadastro</h1>
 
     <!-- <form action="/" method="POST" onsubmit="return checkFields(event)"> -->
-    <div class="não-sei">
+    <div class="efetuar-cadastro">
       <form action="cadastroUsers_exe.php" method="post" onsubmit="return check(this.form)">
 
         <input type="hidden" id="acaoForm" name="acaoForm" value="Contratar">
@@ -216,7 +216,7 @@
         <!-- <input type="button" value="Voltar" class="bt-signup-voltar" onclick="window.location.href='.'"> -->
 
         <input type="button" value="Voltar" class="bt-signup-voltar" onclick="onOffSignUp()">
-        <input type="submit" value="Salvar" class="bt-signup-salvar" >
+        <input type="submit" value="Salvar" class="bt-signup-salvar" onclick="onOffSignUp()" >
 
 
       </form>

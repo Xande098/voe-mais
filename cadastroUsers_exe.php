@@ -39,7 +39,7 @@ mysqli_query($conn, 'SET character_set_results=utf8');
 
 // Faz Select na Base de Dados
 /* $sql = "SELECT id_tipoTel, tipoTel FROM tipo_telefone";
-echo "<div class='não-sei'>";
+echo "<div class='efetuar-cadastro'>";
 if ($result = mysqli_query($conn, $sql)) {
   echo "	  tipoTel";
   if (mysqli_num_rows($result) > 0) {
@@ -63,7 +63,7 @@ mysqli_close($conn); */
 // Faz Select na Base de Dados
 $sql = "INSERT INTO tipo_telefone (id_tipoTel, tipoTel) VALUES ('default','$tipoTel')";
 if ($result = mysqli_query($conn, $sql)) {
-  echo "<div class='não-sei'>";
+  echo "<div class='efetuar-cadastro'>";
   if ($acao == "Contratar")
     echo "1 - Um registro adicionado!";
   else
@@ -109,7 +109,7 @@ $sql = "INSERT INTO telefone (id_telefone, id_tipoTel, numTel) VALUES (
   (SELECT MAX(id_tipoTel) FROM tipo_telefone),
   '$celular')";
 if ($result = mysqli_query($conn, $sql)) {
-  echo "<div class='não-sei'>";
+  echo "<div class='efetuar-cadastro'>";
   if ($acao == "Contratar")
     echo "2 - Um registro adicionado!";
   else
@@ -155,7 +155,7 @@ mysqli_query($conn, 'SET character_set_results=utf8');
 
 /* $sql = "SELECT id_logradouro, tipoLogradouro FROM tipo_logradouro";
 
-echo "<div class='não-sei'>";
+echo "<div class='efetuar-cadastro'>";
 if ($result = mysqli_query($conn, $sql)) {
   echo "	  tipoLogradouro";
   if (mysqli_num_rows($result) > 0) {
@@ -178,7 +178,7 @@ mysqli_close($conn); */
 
 $sql = "INSERT INTO tipo_logradouro (id_logradouro, tipoLogradouro) VALUES (default,'$tipoLogradouro')";
 if ($result = mysqli_query($conn, $sql)) {
-  echo "<div class='não-sei'>";
+  echo "<div class='efetuar-cadastro'>";
   if ($acao == "Contratar")
     echo "3 - Um registro adicionado!";
   else
@@ -221,7 +221,7 @@ mysqli_query($conn, 'SET character_set_results=utf8');
 // Faz Select na Base de Dados
 $sql = "INSERT INTO bairro (id_bairro, nomeBairro) VALUES (default,'$nomeBairro')";
 if ($result = mysqli_query($conn, $sql)) {
-  echo "<div class='não-sei'>";
+  echo "<div class='efetuar-cadastro'>";
   if ($acao == "Contratar")
     echo "4 - Um registro adicionado!";
   else
@@ -264,7 +264,7 @@ mysqli_query($conn, 'SET character_set_results=utf8');
 // Faz Select na Base de Dados
 $sql = "INSERT INTO cidade (id_cidade, nomeCidade) VALUES (default,'$nomeCidade')";
 if ($result = mysqli_query($conn, $sql)) {
-  echo "<div class='não-sei'>";
+  echo "<div class='efetuar-cadastro'>";
   if ($acao == "Contratar")
     echo "5 - Um registro adicionado!";
   else
@@ -311,7 +311,7 @@ $sql = "INSERT INTO estado (id_estado, id_cidade, nomeEstado) VALUES (
   (SELECT MAX(id_cidade) FROM cidade),
   '$nomeEstado')";
 if ($result = mysqli_query($conn, $sql)) {
-  echo "<div class='não-sei'>";
+  echo "<div class='efetuar-cadastro'>";
   if ($acao == "Contratar")
     echo "6 - Um registro adicionado!";
   else
@@ -358,7 +358,7 @@ $sql = "INSERT INTO pais (id_pais, id_estado, nomePais) VALUES (
   (SELECT MAX(id_estado) FROM estado),
   '$nomePais')";
 if ($result = mysqli_query($conn, $sql)) {
-  echo "<div class='não-sei'>";
+  echo "<div class='efetuar-cadastro'>";
   if ($acao == "Contratar")
     echo "7 - Um registro adicionado!";
   else
@@ -409,7 +409,7 @@ $sql = "INSERT INTO endereco (id_endereco, id_logradouro, id_bairro, id_pais, no
   '$nomeRua',
   '$numRua')";
 if ($result = mysqli_query($conn, $sql)) {
-  echo "<div class='não-sei'>";
+  echo "<div class='efetuar-cadastro'>";
   if ($acao == "Contratar")
     echo "8 - Um registro adicionado!";
   else
@@ -486,7 +486,7 @@ $sql = "INSERT INTO cliente (cpf_cliente, id_endereco, id_telefone, nomeCliente,
 /* $sql = "INSERT INTO professor (Nome, Celular, DataNasc, Login, Senha) VALUES ('$nome','$celular','$dtNasc','$login','$md5Senha')"; */
 
 if ($result = mysqli_query($conn, $sql)) {
-  echo "<div class='não-sei'>";
+  echo "<div class='efetuar-cadastro'>";
   if ($acao == "Contratar")
     echo "9 - Um registro adicionado!";
   else
