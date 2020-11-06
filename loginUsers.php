@@ -10,7 +10,7 @@
         <input type="hidden" id="acaoLogin" name="acaoLogin" value="Logar">
 
         <div class="input-wrapper">
-          <label for="nomeCliente">Nome</label>
+          <label for="nomeCliente"></label>
           <input
             name="nomeCliente"
             type="hidden"

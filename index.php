@@ -18,7 +18,10 @@
   <!-- Início do Header -->
   <!-- Inclui MENU.PHP  -->
   <?php
-  if ($_COOKIE['login'] !== "" & $_COOKIE['login'] !== null) {
+  
+  require 'choiceMenu.php';
+  
+  if ($login_cookie !== "" & $login_cookie !== null) {
     require 'menuLogin.php';
   } else {
     require 'menu.php';
