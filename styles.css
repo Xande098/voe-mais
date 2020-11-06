@@ -712,7 +712,8 @@ form input.bt-signup-salvar:hover {
 .content-signin form div:nth-child(1),
 .content-signin form div:nth-child(2),
 .content-signin form div:nth-child(3),
-.content-signin form div:nth-child(6) {
+.content-signin form div:nth-child(4),
+.content-signin form div:nth-child(7) {
   grid-column: span 4;
 }
 

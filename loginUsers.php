@@ -10,6 +10,18 @@
         <input type="hidden" id="acaoLogin" name="acaoLogin" value="Logar">
 
         <div class="input-wrapper">
+          <label for="nomeCliente">Nome</label>
+          <input
+            name="nomeCliente"
+            type="hidden"
+            pattern="[a-zA-Z\u00C0-\u00FF ]{3,15}$"
+            title="Nome entre 3 e 15 letras."
+            placeholder="Joe"
+            required
+          >
+        </div>
+
+        <div class="input-wrapper">
           <label for="title">Login</label>
           <input
             name="cpf_cliente"
