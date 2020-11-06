@@ -772,6 +772,179 @@ form input.bt-signup-salvar:hover {
   border-bottom: none;
 }
 
+/* Modal - Update */
+#modal-update {
+  background: var(--color-header-background);
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 10;
+
+  transition: all 400ms;
+
+}
+
+#modal-update.addScroll {
+  overflow: auto;
+}
+
+#modal-update .content-update {
+  margin-top: 15%;
+
+  color: white;
+}
+
+#modal-update .content-update h1 {
+  text-align: center;
+  margin-bottom: 40px;
+
+  text-transform: uppercase;
+}
+
+#modal-update form {
+  width: 100%;
+  max-width: 700px;
+  max-height: 80vh;
+
+  margin: 0 auto 35%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  gap: 20px;
+}
+
+@media all and (max-width: 768px) {
+  .content-update {
+    -ms-transform: scale(0.8, 0.8); /* IE 9 */
+    transform: scale(0.8, 0.8); /* Standard syntax */
+  }
+}
+
+.content-update form div:nth-child(1),
+.content-update form div:nth-child(2),
+.content-update form div:nth-child(3),
+.content-update form div:nth-child(4),
+.content-update form div:nth-child(5),
+.content-update form div:nth-child(6),
+.content-update form div:nth-child(7),
+.content-update form div:nth-child(8),
+.content-update form div:nth-child(9),
+.content-update form div:nth-child(10),
+.content-update form div:nth-child(11),
+.content-update form div:nth-child(12),
+.content-update form div:nth-child(13),
+.content-update form div:nth-child(14),
+.content-update form div:nth-child(15),
+.content-update form div:nth-child(16),
+.content-update form div:nth-child(17) {
+  grid-column: span 2;
+}
+
+.content-update form div:nth-child(1) {
+  grid-column: span 4;
+}
+
+form .input-wrapper input {
+  width: 100%;
+
+  padding: 12px;
+
+  box-sizing: border-box;
+
+  border-radius: 6px;
+  border: 1px solid rgba(141, 25, 52, 0.5);
+
+  outline: none;
+  font-size: 16px;
+}
+
+for label {
+  font: 500 1.6rem Roboto;
+  line-height: 32px;
+  letter-spacing: 0.8px;
+}
+
+form a,
+form input.bt-signup-voltar {
+  width: 150px;
+  height: 40px;
+
+  background-color: #ffffff22;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  border-radius: 6px;
+
+  align-self: end;
+
+  transition: 400ms;
+}
+
+form a:hover,
+form input.bt-signup-voltar:hover {
+  background: #fff;
+  color: #1C1C1C;
+
+  text-decoration: none;
+}
+
+form button,
+form input.bt-signup-salvar {
+  background: #8257E5;
+  color: #1C1C1C;
+  font-weight: 700;
+
+  width: 150px;
+  height: 40px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  margin-top: 32px;
+  
+  grid-column: 4; /* Seguir com número máximo */
+
+  justify-self: end;
+
+  transition: 400ms;
+
+}
+
+form button:hover,
+form input.bt-signup-salvar:hover {
+  background-color: #0984e3;
+  color: white;
+
+  text-decoration: none;
+}
+
+#modal-update.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
 /* Footer */
 
 footer {

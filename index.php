@@ -55,6 +55,11 @@
     <!-- Fim Modal Sign In -->
     <!-- Fim do Modal -->
 
+    <!-- Início UpdateUsers -->
+    <!-- Inclui updateUsers.PHP -->
+    <?php require 'updateUsers.php'; ?>
+    <!-- Fim Modal UpdateUsers -->
+
     <!-- Início Page Promoções -->
     <!-- Inclui pagePromotionPackages.PHP -->
     <?php require 'pagePromotionPackages.php'; ?>

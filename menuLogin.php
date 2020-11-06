@@ -45,7 +45,7 @@
       </li>
       <li class="item button">
         <section id="buttons" class="create-log">
-          <label class="sign-in" onclick="onOffSignIn()">Atualizar</label>
+          <label class="sign-in" onclick="onOffUpdate()">Atualizar</label>
         </section>
         <!-- <a href="#">Log In</a> -->
       </li>
