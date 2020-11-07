@@ -10,8 +10,9 @@
           </a>
           <div id="hello-user">
             <?php
-            $login_cookie = $_COOKIE['login'];
-            echo "<span>Bem-Vindo, <strong>$login_cookie</strong></span>"
+            /* $login_cookie = $_COOKIE['login']; */
+            $nickName_cookie = $_COOKIE['nickUser'];
+            echo "<span>Bem-Vindo, <strong>$nickName_cookie</strong></span>"
             ?>
           </div>
         </div>

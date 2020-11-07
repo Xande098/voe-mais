@@ -597,6 +597,8 @@ form input.bt-signup-voltar {
 
   border-radius: 6px;
 
+  cursor: pointer;
+
   align-self: end;
 
   transition: 400ms;
@@ -879,7 +881,7 @@ for label {
 }
 
 form a,
-form input.bt-signup-voltar {
+form input.bt-update-voltar {
   width: 150px;
   height: 40px;
 
@@ -895,13 +897,15 @@ form input.bt-signup-voltar {
 
   border-radius: 6px;
 
+  cursor: pointer;
+
   align-self: end;
 
   transition: 400ms;
 }
 
 form a:hover,
-form input.bt-signup-voltar:hover {
+form input.bt-update-voltar:hover {
   background: #fff;
   color: #1C1C1C;
 
@@ -909,7 +913,7 @@ form input.bt-signup-voltar:hover {
 }
 
 form button,
-form input.bt-signup-salvar {
+form input.bt-update-salvar {
   background: #8257E5;
   color: #1C1C1C;
   font-weight: 700;
@@ -932,9 +936,44 @@ form input.bt-signup-salvar {
 }
 
 form button:hover,
-form input.bt-signup-salvar:hover {
+form input.bt-update-salvar:hover {
   background-color: #0984e3;
   color: white;
+
+  text-decoration: none;
+}
+
+form input.bt-excluir-conta {
+  margin-top: 20px;
+  margin-bottom: 40px;
+
+  width: 150px;
+  height: 40px;
+
+  background-color: #ffffff22;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  grid-column: 4; /* Seguir com número máximo */
+
+  justify-self: end;
+
+  transition: 400ms;
+}
+
+form input.bt-excluir-conta:hover {
+  background: #870707;
+  color: #ffffff;
 
   text-decoration: none;
 }

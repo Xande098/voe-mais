@@ -13,16 +13,13 @@
           <label for="nomeCliente"></label>
           <input
             name="nomeCliente"
+            id="nomeCliente"
             type="hidden"
-            pattern="[a-zA-Z\u00C0-\u00FF ]{3,15}$"
-            title="Nome entre 3 e 15 letras."
-            placeholder="Joe"
-            required
           >
         </div>
 
         <div class="input-wrapper">
-          <label for="title">Login</label>
+          <label for="cpf_cliente">Login</label>
           <input
             name="cpf_cliente"
             id="cpf_cliente"
@@ -35,7 +32,7 @@
         </div>
 
         <div class="input-wrapper">
-          <label for="title">Senha</label>
+          <label for="senha">Senha</label>
           <input
             type="password"
             name="senha"
