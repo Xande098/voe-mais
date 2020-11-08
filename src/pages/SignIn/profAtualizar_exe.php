@@ -48,7 +48,7 @@ Novembro/2018
 		<!-- Acesso ao BD-->
 		<?php
 			
-			$servername = "localhost:3307";
+			$servername = "localhost:3306";
 			$username = "usu@IE_Exe";
 			$password = "php@PUCPR";
 			$database = "IE_Exemplo";
