@@ -10,10 +10,47 @@
           </a>
           <div id="hello-user">
             <?php
-            /* $login_cookie = $_COOKIE['login']; */
-            $nickName_cookie = $_COOKIE['nickUser'];
-            echo "<span>Bem-Vindo, <strong>$nickName_cookie</strong></span>"
+
+            $servername = "localhost:3306";
+            $username = "userVoe";
+            $password = "1234";
+            $database = "voemais";
+
+            // Cria conexão
+            $conn = mysqli_connect($servername, $username, $password, $database);
+
+            // Verifica conexão
+            if (!$conn) {
+              die("Connection failed: " . mysqli_connect_error());
+            }
+            // Configura para trabalhar com caracteres acentuados do português
+            mysqli_query($conn, "SET NAMES 'utf8'");
+            mysqli_query($conn, "SET NAMES 'utf8'");
+            mysqli_query($conn, 'SET character_set_connection=utf8');
+            mysqli_query($conn, 'SET character_set_client=utf8');
+            mysqli_query($conn, 'SET character_set_results=utf8');
+
+
+            // Faz Select na Base de Dados
+            $sql = "SELECT cpf_cliente, nomeCliente, sobrenomeCliente, email, dataNasc, senha FROM cliente WHERE cpf_cliente = $login_cookie";
+
+            //Inicio DIV form
+            echo "<div class='efetuar-cadastro'>";
+            if ($result = mysqli_query($conn, $sql)) {
+              if (mysqli_num_rows($result) > 0) {
+                // Apresenta cada linha da tabela
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo "<span>Olá, <strong>$row[nomeCliente]</strong> <strong>$row[sobrenomeCliente]</strong> </span>";
+                }
+              }
+            } else {
+              echo "Erro executando UPDATE: " . mysqli_error($conn);
+            }
+
+            mysqli_close($conn); //Encerra conexao com o BD
+
             ?>
+
           </div>
         </div>
       </li>

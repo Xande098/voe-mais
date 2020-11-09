@@ -40,6 +40,7 @@
         while ($row = mysqli_fetch_assoc($result)) {
     ?>
 
+          <h2>Altere os dados da Disciplina Cód. = <?php echo $row['nomeCliente']; ?></h2>
           <!-- <div class="efetuar-cadastro"> -->
 
           <form action="updateUsers_exe.php" method="post" onsubmit="return check(this.form)">

@@ -27,19 +27,8 @@ if (isset($acao)) {
       .href='index.php';</script>";
       die();
     } else {
-      $vereficaUser = "SELECT nomeCliente FROM cliente WHERE cpf_cliente = $login_cookie";
-      $result = mysqli_query($conn, $vereficaUser);
-      $nome = mysqli_fetch_fields($result);
-
-      foreach ($nome as $val) {
-        $imprime = printf("Name:     %s\n", $val->nomeCliente);
-      } 
-
-      /* $nome = mysqli_fetch_array($vereficaUser); */
-
       session_start();
       setcookie("login", $login, time()+3600); /* expira em 1 hora */
-      setcookie("nickUser", $imprime, time()+3600); /* expira em 1 hora */
       header("Location:index.php");
     }
 }
