@@ -5,7 +5,7 @@
 
     <div class="efetuar-login">
       <!-- <form action="/" method="POST" onsubmit="return checkFields(event)"> -->
-      <form action="loginUsers.exe.php" method="post" onsubmit="return check(this.form)">
+      <form action="loginUsers_exe.php" method="post" onsubmit="return check(this.form)">
 
         <input type="hidden" id="acaoLogin" name="acaoLogin" value="Logar">
 

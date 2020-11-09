@@ -560,7 +560,8 @@ div.contente a {
   grid-column: span 4;
 }
 
-form .input-wrapper input {
+form .input-wrapper input,
+form .input-wrapper select {
   width: 100%;
 
   padding: 12px;
@@ -860,7 +861,8 @@ form input.bt-signup-salvar:hover {
   grid-column: span 4;
 }
 
-form .input-wrapper input {
+form .input-wrapper input,
+form .input-wrapper select {
   width: 100%;
 
   padding: 12px;
