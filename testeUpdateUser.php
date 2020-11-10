@@ -29,6 +29,9 @@
 
 
     // Faz Select na Base de Dados
+    $sqlClient = "SELECT cpf_cliente, nomeCliente, sobrenomeCliente, email, dataNasc, senha FROM cliente WHERE cpf_cliente = $login_cookie";
+    $sqlPais = "SELECT nomePais FROM pais WHERE cpf_cliente = $login_cookie";
+    
     $sqlClient = "SELECT `cliente`.*, `endereco`.*, `pais`.*, `estado`.*, `cidade`.*, `telefone`.*, `tipo_telefone`.*, `bairro`.*, `tipo_logradouro`.* FROM `cliente`
     INNER JOIN `endereco` ON `cliente`.`id_endereco` = `endereco`.`id_endereco`
     INNER JOIN `pais` ON `endereco`.`id_pais` = `pais`.`id_pais`
@@ -40,6 +43,22 @@
     INNER JOIN `tipo_telefone` ON `telefone`.`id_tipoTel` = `tipo_telefone`.`id_tipoTel`
     WHERE cpf_cliente = $login_cookie";
 
+    /* $sqlPais = "SELECT cliente.cpf_cliente, cliente.nomeCliente, cliente.sobrenomeCliente, cliente.email, cliente.dataNasc, cliente.senha, cliente.id_endereco, cliente.id_telefone,
+    tipo_logradouro.id_logradouro, tipo_logradouro.tipoLogradouro,
+    bairro.id_bairro, bairro.nomeBairro,
+    tipo_telefone.id_tipoTel, tipo_telefone.tipoTel,
+    telefone.id_telefone, telefone.id_tipoTel, telefone.numTel,
+    cidade.id_cidade, cidade.nomeCidade,
+    estado.id_estado, estado.nomeEstado, estado.id_cidade,
+    pais.id_pais, pais.nomePais, pais.id_estado,
+    endereco.id_endereco, endereco.id_logradouro, endereco.id_bairro, endereco.id_pais, endereco.nomeRua, endereco.numRua
+    FROM
+      cliente
+    INNER JOIN
+      endereco ON cliente.id_endereco = frase.autor_id
+    WHERE
+      autor.autor_nome = 'pedro'" */
+
     //Inicio DIV form
     echo "<div class='efetuar-cadastro'>";
     if ($result = mysqli_query($conn, $sqlClient)) {
@@ -47,9 +66,6 @@
         // Apresenta cada linha da tabela
         while ($row = mysqli_fetch_assoc($result)) {
     ?>
-
-          <h2>Altere os seus dados! = <?php echo $row['nomeCliente']; ?></h2>
-          <!-- <div class="efetuar-cadastro"> -->
 
           <form action="updateUsers_exe.php" method="post" onsubmit="return check(this.form)">
 
@@ -82,12 +98,12 @@
 
             <div class="input-wrapper">
               <label for="nomePais">País</label>
-              <input type="text" name="nomePais" pattern="[a-zA-Z\u00C0-\u00FF ]{2,15}$" title="Nome do País de 2 à 15 letras." value="<?php echo $row['nomePais']; ?>" required>
+              <input type="text" name="nomePais" pattern="[a-zA-Z\u00C0-\u00FF ]{2,15}$" title="Nome do País de 2 à 15 letras." value="<?php echo $row['']; ?>" required>
             </div>
 
             <div class="input-wrapper">
               <label for="tipoTel">Tipo de Telefone</label>
-              <input list="tipo-tel" type="text" name="tipoTel" title="Escolha uma das opções disponíveis." value="<?php echo $row['tipoTel']; ?>" required>
+              <input list="tipo-tel" type="text" name="tipoTel" title="Escolha uma das opções disponíveis." value="<?php echo $row['']; ?>" required>
               <datalist id="tipo-tel">
                 <option value="Celular">
                 <option value="Trabalho">
@@ -98,22 +114,22 @@
 
             <div class="input-wrapper">
               <label for="numTel">Telefone</label>
-              <input type="tel" name="numTel" maxlength="15" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(41) 99999-9999" value="<?php echo $row['numTel']; ?>" required>
+              <input type="tel" name="numTel" maxlength="15" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$" title="(41) 99999-9999" value="<?php echo $row['']; ?>" required>
             </div>
 
             <div class="input-wrapper">
               <label for="nomeEstado">Estado</label>
-              <input type="text" name="nomeEstado" pattern="[a-zA-Z\u00C0-\u00FF ]{2,15}$" title="Nome do Estado de 2 à 15 letras." value="<?php echo $row['nomeEstado']; ?>" required>
+              <input type="text" name="nomeEstado" pattern="[a-zA-Z\u00C0-\u00FF ]{2,15}$" title="Nome do Estado de 2 à 15 letras." value="<?php echo $row['']; ?>" required>
             </div>
 
             <div class="input-wrapper">
               <label for="nomeCidade">Cidade</label>
-              <input type="text" name="nomeCidade" pattern="[a-zA-Z\u00C0-\u00FF ]{2,15}$" title="Nome do Cidade de 2 à 15 letras." value="<?php echo $row['nomeCidade']; ?>" required>
+              <input type="text" name="nomeCidade" pattern="[a-zA-Z\u00C0-\u00FF ]{2,15}$" title="Nome do Cidade de 2 à 15 letras." value="<?php echo $row['']; ?>" required>
             </div>
 
             <div class="input-wrapper">
               <label for="tipoLogradouro">Tipo Logradouro</label>
-              <input type="text" name="tipoLogradouro" list="tipo-Logradouro" title="Escolha uma das opções disponíveis." value="<?php echo $row['tipoLogradouro']; ?>" required>
+              <input type="text" name="tipoLogradouro" list="tipo-Logradouro" title="Escolha uma das opções disponíveis." value="<?php echo $row['']; ?>" required>
               <datalist id="tipo-Logradouro">
                 <option value="Rua">
                 <option value="Avenida">
@@ -122,17 +138,17 @@
 
             <div class="input-wrapper">
               <label for="nomeRua">Logradouro</label>
-              <input type="text" name="nomeRua" pattern="[a-zA-Z\u00C0-\u00FF ]{5,30}$" title="Digite o endereço de 5 à 30 letras." value="<?php echo $row['nomeRua']; ?>" required>
+              <input type="text" name="nomeRua" pattern="[a-zA-Z\u00C0-\u00FF ]{5,30}$" title="Digite o endereço de 5 à 30 letras." value="<?php echo $row['']; ?>" required>
             </div>
 
             <div class="input-wrapper">
               <label for="numRua">Número</label>
-              <input type="number" name="numRua" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="7" title="Digite o número do seu endereço." value="<?php echo $row['numRua']; ?>" required>
+              <input type="number" name="numRua" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="7" title="Digite o número do seu endereço." value="<?php echo $row['']; ?>" required>
             </div>
 
             <div class="input-wrapper">
               <label for="nomeBairro">Bairro</label>
-              <input type="text" name="nomeBairro" pattern="[a-zA-Z\u00C0-\u00FF ]{3,30}$" title="Digite o Bairro de 3 à 30 letras." value="<?php echo $row['nomeBairro']; ?>" required>
+              <input type="text" name="nomeBairro" pattern="[a-zA-Z\u00C0-\u00FF ]{3,30}$" title="Digite o Bairro de 3 à 30 letras." value="<?php echo $row['']; ?>" required>
             </div>
 
             <div class="input-wrapper">
