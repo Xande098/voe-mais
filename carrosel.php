@@ -20,15 +20,11 @@
     <div class="image-carrosel prev-carrosel">
       <img src="./src/assets/images/destiny/eua-arizona-horseshoe-bend-media.jpg">
     </div>
-    <!-- <div class="button-container">
-          <div class="button-carrosel"><i class="fas fa-angle-left"></i></div>
-          <div class="button-carrosel"><i class="fas fa-angle-right"></i></div>
-        </div> -->
   </div>
   <div class="nav-carrosel forth">
     <p>&raquo;</p>
   </div>
   <div class="clear"></div>
-  <p>Window resized <span id="test">0</span> pixels.</p>
+  <!-- <p>Window resized <span id="test">0</span> pixels.</p> -->
 </div>
 <!-- Fim -->

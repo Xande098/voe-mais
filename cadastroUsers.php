@@ -6,7 +6,7 @@
 
     <!-- <form action="/" method="POST" onsubmit="return checkFields(event)"> -->
     <div class="efetuar-cadastro">
-      <form action="cadastroUsers_exe.php" method="post" onsubmit="return check(this.form)">
+      <form action="cadastroUsers_exe.php" method="post" onsubmit="return check(this.form), checkFields(event)">
 
         <input type="hidden" id="acaoForm" name="acaoForm" value="Contratar">
       
@@ -216,8 +216,7 @@
         <!-- <input type="button" value="Voltar" class="bt-signup-voltar" onclick="window.location.href='.'"> -->
 
         <input type="button" value="Voltar" class="bt-signup-voltar" onclick="onOffSignUp()">
-        <input type="submit" value="Salvar" class="bt-signup-salvar" onclick="onOffSignUp()" >
-
+        <input type="submit" value="Salvar" class="bt-signup-salvar" onclick="onOffSignUp(), window.location.href='index.php'" >
 
       </form>
     </div>

@@ -44,14 +44,25 @@ function onOffSignUp() {
     .toggle("addScroll")
 }
 
-/* function checkFields(event) {
+function checkFields(event) {
 
   const valuesToCheck = [
-    "title",
-    "category",
-    "image",
-    "description",
-    "link",
+    "nomeCliente",
+    "sobrenomeCliente",
+    "cpf_cliente",
+    "DataNasc",
+    "email",
+    "nomePais",
+    "tipoTel",
+    "numTel",
+    "nomeEstado",
+    "nomeCidade",
+    "tipoLogradouro",
+    "nomeRua",
+    "numRua",
+    "nomeBairro",
+    "senha",
+    "senha2",
   ]
 
   const isEmpty = valuesToCheck.find(function (value) {
@@ -69,7 +80,7 @@ function onOffSignUp() {
     alert("Por favor, preencha todos os campos!");
   }
 
-} */
+}
 
 // Modal - Sign In
 function onOffSignIn() {
@@ -137,11 +148,78 @@ function onOffUpdate() {
 function checkFields(event) {
 
   const valuesToCheck = [
-    "title",
-    "category",
-    "image",
-    "description",
-    "link",
+    "nomeCliente",
+    "sobrenomeCliente",
+    "cpf_cliente",
+    "DataNasc",
+    "email",
+    "nomePais",
+    "tipoTel",
+    "numTel",
+    "nomeEstado",
+    "nomeCidade",
+    "tipoLogradouro",
+    "nomeRua",
+    "numRua",
+    "nomeBairro",
+    "senha",
+    "senha2",
+  ]
+
+  const isEmpty = valuesToCheck.find(function (value) {
+
+    const checkIfIsString = typeof event.target[value].value === "string";
+    const checkIfIsEmpty = !event.target[value].value.trim()
+
+    if (checkIfIsString && checkIfIsEmpty) {
+      return true
+    }
+  })
+
+  if (isEmpty) {
+    event.preventDefault()
+    alert("Por favor, preencha todos os campos!");
+  }
+
+}
+
+// Modal - Excluir
+function onOffPageExcluir() {
+  document
+    .querySelector("#modal-excluir")
+    .classList
+    .toggle("hide")
+
+  document
+    .querySelector("body")
+    .classList
+    .toggle("hideScroll")
+
+  document
+    .querySelector("#modal-excluir")
+    .classList
+    .toggle("addScroll")
+}
+
+function checkFields(event) {
+
+  const valuesToCheck = [
+    "nomeCliente",
+    "sobrenomeCliente",
+    "cpf_cliente",
+    "DataNasc",
+    "email",
+    "nomePais",
+    "tipoTel",
+    "numTel",
+    "nomeEstado",
+    "nomeCidade",
+    "tipoLogradouro",
+    "nomeRua",
+    "numRua",
+    "nomeBairro",
+    "senha",
+    "senha2",
   ]
 
   const isEmpty = valuesToCheck.find(function (value) {

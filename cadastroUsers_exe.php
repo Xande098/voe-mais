@@ -1,14 +1,3 @@
-<!-- Acesso em:-->
-<?php
-
-/* date_default_timezone_set("America/Sao_Paulo");
-$data = date("d/m/Y H:i:s", time());
-echo "<p class='w3-small' > ";
-echo "Acesso em: ";
-echo $data;
-echo "</p> " */
-?>
-
 <!-- Acesso ao BD tabela tipo_telefone-->
 <?php
 
@@ -35,7 +24,6 @@ mysqli_query($conn, "SET NAMES 'utf8'");
 mysqli_query($conn, 'SET character_set_connection=utf8');
 mysqli_query($conn, 'SET character_set_client=utf8');
 mysqli_query($conn, 'SET character_set_results=utf8');
-
 
 // Faz Select na Base de Dados
 /* $sql = "SELECT id_tipoTel, tipoTel FROM tipo_telefone";
@@ -500,4 +488,5 @@ mysqli_close($conn);  //Encerra conexao com o BD
 ?>
 
 <!-- Volta para a home depois de ter feito o form -->
-<body onload='window.history.back();'>
+
+<body id="body-fundo" onload='window.history.back();'>

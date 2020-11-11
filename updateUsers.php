@@ -48,10 +48,8 @@
         while ($row = mysqli_fetch_assoc($result)) {
     ?>
 
-          <h2>Altere os seus dados! = <?php echo $row['nomeCliente']; ?></h2>
-          <!-- <div class="efetuar-cadastro"> -->
 
-          <form action="updateUsers_exe.php" method="post" onsubmit="return check(this.form)">
+          <form action="updateUsers_exe.php" method="post" onsubmit="return check(this.form), checkFields(event)">
 
             <input type="hidden" id="Id" name="Id" value="<?php echo $row['cpf_cliente']; ?>">
 
@@ -137,21 +135,21 @@
 
             <div class="input-wrapper">
               <label for="senha">Nova Senha</label>
-              <input type="password" name="senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,8}" title="Deve conter ao menos um número, uma letra maiúscula e minúscula, um caracter especial, com 6 a 8 caracteres" required>
+              <input type="password" name="senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,8}" title="Deve conter ao menos um número, uma letra maiúscula e minúscula, um caracter especial, com 6 a 8 caracteres. Para atualizar, digite a senha!" required>
             </div>
 
             <div class="input-wrapper">
               <label for="senha2">Confirme a Nova Senha</label>
-              <input type="password" name="senha2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,8}" title="Deve conter ao menos um número, uma letra maiúscula e minúscula, um caracter especial, com 6 a 8 caracteres" required>
+              <input type="password" name="senha2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,8}" title="Deve conter ao menos um número, uma letra maiúscula e minúscula, um caracter especial, com 6 a 8 caracteres. Para atualizar, digite a senha!" required>
             </div>
 
             <input type="button" value="Voltar" class="bt-update-voltar" onclick="onOffUpdate()">
-            <input type="submit" value="Salvar" class="bt-update-salvar" onclick="onOffUpdate()">
+            <input type="submit" value="Salvar" class="bt-update-salvar" onclick="onOffUpdate(), window.location.href='index.php'">
 
-            <input type="submit" value="Excluir Conta" class="bt-excluir-conta">
-
+            <input type="button" value="Excluir Conta" class="bt-excluir-conta" onclick="onOffPageExcluir()">
 
           </form>
+
     <?php
         }
       }

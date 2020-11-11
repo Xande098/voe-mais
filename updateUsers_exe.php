@@ -76,7 +76,7 @@ mysqli_query($conn, 'SET character_set_results=utf8');
 // Faz Select na Base de Dados
 
 $sqlEnd = "UPDATE `cliente`, `endereco`, `pais`, `estado`, `cidade`, `telefone`, `tipo_telefone`, `bairro`, `tipo_logradouro`
-  SET
+    SET
   `cliente`.`nomeCliente` = '$nomeCliente',
   `cliente`.`sobrenomeCliente` = '$sobrenomeCliente',
   `cliente`.`email` = '$email',
@@ -99,7 +99,7 @@ $sqlEnd = "UPDATE `cliente`, `endereco`, `pais`, `estado`, `cidade`, `telefone`,
   `tipo_logradouro`.`tipoLogradouro` = '$tipoLogradouro',
 
   `tipo_telefone`.`tipoTel` = '$tipoTel'
-WHERE `cliente`.`cpf_cliente` = $login_cookie AND `endereco`.`id_endereco` IN (SELECT `cliente`.`id_endereco` FROM `cliente`
+  WHERE `cliente`.`cpf_cliente` = $login_cookie AND `endereco`.`id_endereco` IN (SELECT `cliente`.`id_endereco` FROM `cliente`
     INNER JOIN `endereco` ON `cliente`.`id_endereco` = `endereco`.`id_endereco`
     INNER JOIN `pais` ON `endereco`.`id_pais` = `pais`.`id_pais`
     INNER JOIN `estado` ON `pais`.`id_estado` = `estado`.`id_estado`
@@ -109,19 +109,23 @@ WHERE `cliente`.`cpf_cliente` = $login_cookie AND `endereco`.`id_endereco` IN (S
     INNER JOIN `tipo_logradouro` ON `endereco`.`id_logradouro` = `tipo_logradouro`.`id_logradouro`
     INNER JOIN `tipo_telefone` ON `telefone`.`id_tipoTel` = `tipo_telefone`.`id_tipoTel`
     WHERE `cliente`.cpf_cliente = $login_cookie)
-AND `cliente`.`cpf_cliente` = $login_cookie";
+  AND `cliente`.`cpf_cliente` = $login_cookie";
 
 
 
 echo "<div class='efetuar-cadastro'>";
 
 if ($result = mysqli_query($conn, $sqlEnd)) {
-  echo "2 - Um registro alterado!";
+  echo "1 - Um registro alterado!";
 } else {
-  echo "2 - Erro executando UPDATE: " . mysqli_error($conn);
+  echo "1 - Erro executando UPDATE: " . mysqli_error($conn);
 }
 
 echo "</div>";
 mysqli_close($conn); //Encerra conexao com o BD
 
 ?>
+
+<!-- Volta para a home depois de ter feito o form -->
+
+<body onload='window.history.back();'>

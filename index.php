@@ -60,6 +60,11 @@
     <?php require 'updateUsers.php'; ?>
     <!-- Fim Modal UpdateUsers -->
 
+    <!-- Início userExcluir. -->
+    <!-- Inclui userExcluir.PHP -->
+    <?php require 'userExcluir.php'; ?>
+    <!-- Fim Modal userExcluir -->
+
     <!-- Início Page Promoções -->
     <!-- Inclui pagePromotionPackages.PHP -->
     <?php require 'pagePromotionPackages.php'; ?>
